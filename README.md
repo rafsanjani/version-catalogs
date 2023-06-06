@@ -1,0 +1,1 @@
+### Publishing all my most used dependencies as a catalog binary
