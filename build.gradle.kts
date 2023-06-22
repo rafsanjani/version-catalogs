@@ -1,5 +1,5 @@
 group = "io.github.rafsanjani"
-version = "0.0.7"
+version = "0.0.8"
 
 plugins {
     `version-catalog`
@@ -69,7 +69,7 @@ publishing {
     repositories {
         maven {
             setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            version = "0.0.7"
+            version = "0.0.8"
             group = "io.github.rafsanjani"
 
             credentials {

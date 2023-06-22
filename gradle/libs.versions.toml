@@ -72,7 +72,7 @@ compose-foundation-foundation = { module = "androidx.compose.foundation:foundati
 compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout" }
 compose-material-iconsextended = { module = "androidx.compose.material:material-icons-extended" }
 compose-animation-animation = { module = "androidx.compose.animation:animation" }
-compose-material-material2={module="androidx.compose.material:material", version.ref="material"}
+compose-material-material2 = { module = "androidx.compose.material:material", version.ref = "material" }
 compose-material-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 compose-material-material3-windowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3" }
 
@@ -290,6 +290,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlin-dokka = { id = "org.jetbrains.dokka", version.require = "1.8.20" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.require = "1.4.0" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 google-playservices = { id = "com.google.gms.google-services", version.ref = "googlePlayServices" }
@@ -301,3 +302,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 versions-plugin = { id = "com.github.ben-manes.versions", version.require = "0.47.0" }
 kmpNativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmpNativeCoroutines" }
 testLogger = { id = "com.adarshr.test-logger", version.require = "3.2.0" }
+ricklephas-kmp-nativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.require = "0.13.3" }
