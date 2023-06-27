@@ -303,6 +303,7 @@ google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+mokoResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 versions-plugin = { id = "com.github.ben-manes.versions", version.require = "0.47.0" }
 kmpNativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmpNativeCoroutines" }
