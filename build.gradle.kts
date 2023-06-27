@@ -1,7 +1,7 @@
 val libraryVersion = "0.2.0"
 val libraryGroup = "io.github.rafsanjani"
 
-group = "io.github.rafsanjani"
+group = libraryGroup
 version = libraryVersion
 
 plugins {
