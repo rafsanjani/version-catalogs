@@ -1,5 +1,8 @@
+val libraryVersion = "0.2.0"
+val libraryGroup = "io.github.rafsanjani"
+
 group = "io.github.rafsanjani"
-version = "0.0.8"
+version = libraryVersion
 
 plugins {
     `version-catalog`
@@ -69,8 +72,8 @@ publishing {
     repositories {
         maven {
             setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            version = "0.0.8"
-            group = "io.github.rafsanjani"
+            version = libraryVersion
+            group = libraryGroup
 
             credentials {
                 username = publishingUsername
