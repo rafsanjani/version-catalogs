@@ -1,4 +1,4 @@
-val libraryVersion = "0.2.1"
+val libraryVersion = "0.2.2"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
@@ -8,6 +8,7 @@ plugins {
     `version-catalog`
     `maven-publish`
     signing
+    id("io.github.gradle-nexus.publish-plugin").version("1.3.0")
 }
 
 catalog {
@@ -19,11 +20,26 @@ catalog {
 signing {
     sign(publishing.publications)
 }
+
 val publishingUsername: String? = System.getenv("MAVEN_CENTRAL_USERNAME")
 val publishingPassword: String? = System.getenv("MAVEN_CENTRAL_PASSWORD")
 
 if (publishingUsername == null || publishingPassword == null) {
     error("MAVEN_CENTRAL_USERNAME and MAVEN_CENTRAL_PASSWORD not found!!")
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            useStaging.set(true)
+
+            username.set(publishingUsername)
+            password.set(publishingPassword)
+
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        }
+    }
 }
 
 publishing {
@@ -45,11 +61,12 @@ publishing {
                 developers {
                     developer {
                         id.set("foreverrafs")
-                        name.set("Rafsanjani")
+                        name.set("Rafsanjani Abdul-Aziz")
+                        email.set("foreverrafs@gmail.com")
                     }
                 }
                 organization {
-                    name.set("Rafsanjani")
+                    name.set("Code Twisters Inc.")
                 }
 
                 scm {
@@ -65,19 +82,6 @@ publishing {
                         }
                     }
                 }
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            version = libraryVersion
-            group = libraryGroup
-
-            credentials {
-                username = publishingUsername
-                password = publishingPassword
             }
         }
     }
