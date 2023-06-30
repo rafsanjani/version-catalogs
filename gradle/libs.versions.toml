@@ -110,7 +110,7 @@ square-sqldelight-driver-sqlite = { module = "app.cash.sqldelight:sqlite-driver"
 square-sqldelight-coroutinesExt = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
 
 #Leak Canary
-square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.11"
+square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.12"
 
 #OkHttp
 square-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
