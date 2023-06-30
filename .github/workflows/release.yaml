@@ -1,7 +1,9 @@
 name: Deploy to Sonatype
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - *
 
 jobs:
   deploy:
