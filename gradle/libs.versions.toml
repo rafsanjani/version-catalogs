@@ -1,8 +1,8 @@
 [versions]
-compileSdk = "33"
+compileSdk = "34"
 metricsPerformance = "1.0.0-alpha04"
-minimumSdk = "26"
-targetSdk = "33"
+minimumSdk = "28"
+targetSdk = "34"
 appVersionCode = "80"
 
 assertk = "0.26.1"
