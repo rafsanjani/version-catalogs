@@ -1,4 +1,4 @@
-val libraryVersion = "0.3.0"
+val libraryVersion = "0.3.1"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
