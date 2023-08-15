@@ -14,6 +14,7 @@ composeLintChecks = "1.2.0"
 googlePlayServices = "4.3.15"
 kotlinxCollectionsImmutable = "0.3.5"
 compose-multiplatform = "1.4.3"
+voyager = "1.0.0-rc06"
 moko = "0.23.0"
 
 kalendar = "1.3.1"
@@ -185,6 +186,13 @@ google-playservices-gradlePlugin = "com.google.gms:google-services:4.3.15"
 google-playservices-core = "com.google.android.play:core-ktx:1.8.1"
 google-playservices-location = "com.google.android.gms:play-services-location:21.0.1"
 google-material = "com.google.android.material:material:1.9.0"
+
+#Voyager
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-bottomSheetNavigator = { module = "cafe.adriel.voyager:voyager-bottom-sheet-navigator", version.ref = "voyager" }
+voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+voyager-androidViewModel = { module = "cafe.adriel.voyager:voyager-androidx", version.ref = "voyager" }
+voyager-hilt = { module = "cafe.adriel.voyager:voyager-hilt", version.ref = "voyager" }
 
 #Androidx
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxnavigation" }
