@@ -62,7 +62,6 @@ dependencyResolutionManagement {
 versionCatalogs {  
   create("remoteLibs") {  
     from("io.github.rafsanjani:versions:0.3.3")
-    version("kotlin","1.8.22") //override kotlin version
   }  
 }  
 ```
