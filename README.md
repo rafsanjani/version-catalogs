@@ -86,4 +86,4 @@ Code completion can be leveraged for discovering other libraries and plugins.
 You can see a complete usage by referencing the sample app
 
 
-##### Note: I'm updating these dependencies very rapidly so I wouldn't recommend using it in a production environment. 
+##### Note: I'm updating these dependencies very frequently so I wouldn't recommend using it in a production environment. 
