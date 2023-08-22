@@ -8,7 +8,9 @@ plugins {
     `version-catalog`
     `maven-publish`
     signing
-    id("io.github.gradle-nexus.publish-plugin").version("1.3.0")
+    alias(libs.plugins.nexusPublishPlugin)
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 catalog {

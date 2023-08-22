@@ -16,6 +16,13 @@ dependencyResolutionManagement {
         maven("https://jitpack.io")
         mavenLocal()
     }
+
+    versionCatalogs {
+        create("remoteLibs") {
+            from("io.github.rafsanjani:versions:0.3.3")
+        }
+    }
 }
 
 include("versions")
+include(":sample")
