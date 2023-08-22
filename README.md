@@ -49,6 +49,32 @@ dependencies{
 }
 ```
 
+You can rename your catalogs object so that it doesn't clash with your local local `libs.versions.toml` file. 
+
+```gradle
+dependencyResolutionManagement {  
+  repositories {  
+  mavenCentral()  
+  google()  
+  gradlePluginPortal()  
+}  
+  
+versionCatalogs {  
+  create("remoteLibs") {  
+    from("io.github.rafsanjani:versions:0.3.3")
+    version("kotlin","1.8.22") //override kotlin version
+  }  
+}  
+```
+
+There reference will change according during dependency declaration
+```gradle
+dependencies{
+  implementation(remoteLibs.androidx.core)
+}
+```
+
+
 You can also reference plugins using the newer gradle syntax
 
 ```gradle
