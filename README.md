@@ -66,7 +66,7 @@ versionCatalogs {
 }  
 ```
 
-There reference will change according during dependency declaration
+There reference will change accordingly during dependency declaration
 ```gradle
 dependencies{
   implementation(remoteLibs.androidx.core)
