@@ -1,5 +1,9 @@
 {
-  "extends": [
-    "config:base"
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["major","minor", "patch"],
+      "automerge": true
+    }
   ]
 }
