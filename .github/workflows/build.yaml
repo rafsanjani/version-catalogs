@@ -2,9 +2,6 @@ name: Build
 
 on: [ push, pull_request ]
 
-concurrency:
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
