@@ -1,4 +1,4 @@
-val libraryVersion = "0.3.6"
+val libraryVersion = "0.3.7"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
@@ -8,7 +8,7 @@ plugins {
     `version-catalog`
     `maven-publish`
     signing
-    alias(libs.plugins.nexusPublishPlugin)
+    alias(libs.plugins.nexus.publishing)
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
 }
