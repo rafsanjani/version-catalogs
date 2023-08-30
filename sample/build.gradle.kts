@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -45,6 +47,9 @@ android {
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material.material3)
+    ksp(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.compiler)
+    implementation(libs.dagger.hilt)
     implementation(libs.compose.ui.tooling)
     implementation(libs.compose.material.material2)
     implementation(libs.androidx.material)
