@@ -15,23 +15,27 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var randomString: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            Content(text = randomString)
         }
     }
 }
 
 @Composable
-private fun Content() {
+private fun Content(text: String) {
     MaterialTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(
-                    text = "Hello Versions",
+                    text = text,
                     modifier = Modifier.semantics {
                         contentDescription = "welcome-message"
                     },
@@ -44,5 +48,5 @@ private fun Content() {
 @Preview
 @Composable
 private fun Preview() {
-    Content()
+    Content(text = "Hello There")
 }

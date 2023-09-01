@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.org.bouncycastle.cms.RecipientId.password
+
 val libraryVersion = "0.3.7"
 val libraryGroup = "io.github.rafsanjani"
 
@@ -9,8 +11,6 @@ plugins {
     `maven-publish`
     signing
     alias(libs.plugins.nexus.publishing)
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
 }
 
 catalog {
