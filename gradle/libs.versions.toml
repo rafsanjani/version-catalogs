@@ -59,6 +59,9 @@ nexusPublish = "1.3.0"
 androidx-hilt-compiler = "1.1.0-alpha01"
 kotlinPoet = "1.14.2"
 javaPoet = "1.13.0"
+firebasePerfPlugin = "1.4.2"
+firebaseCrashlyticsPlugin = "2.9.2"
+
 
 [libraries]
 androidx-metrics-performance = { module = "androidx.metrics:metrics-performance", version.ref = "metricsPerformance" }
@@ -275,31 +278,12 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "benchmark-macro-junit4" }
 material = { group = "com.google.android.material", name = "material", version.ref = "com-google-android-material-material" }
 
-[bundles]
-androidx-compose-implementation = [
-    "compose-ui-ui",
-    "compose-ui-util",
-    "compose-ui-tooling",
-    "compose-ui-tooling-data",
-    "compose-ui-tooling-preview",
-    "compose-foundation-foundation",
-    "compose-foundation-foundation",
-    "compose-foundation-layout",
-    "compose-material-iconsextended",
-    "compose-animation-animation",
-    "androidx-paging-compose",
-    "compose-material-material3",
-    "compose-material-material3-windowSizeClass",
-    "compose-material-material2"
-]
-
-androidx-compose-testImplementation = [
-    "compose-ui-test-unit"
-]
-
-androidx-compose-androidTestImplementation = [
-    "compose-ui-test-junit"
-]
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+firebase-performance-gradlePlugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+work-testing = { group = "androidx.work", name = "work-testing", version = "2.8.1" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
