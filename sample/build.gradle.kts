@@ -51,7 +51,6 @@ dependencies {
     ksp(libs.dagger.compiler)
     implementation(libs.dagger.hilt)
     implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.material.material2)
     implementation(libs.androidx.material)
     implementation(libs.androidx.activity.compose)
     testImplementation(libs.junit.junit)
