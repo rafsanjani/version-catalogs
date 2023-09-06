@@ -13,7 +13,7 @@ benchmark-macro-junit4 = "1.2.0-beta05"
 composeLintChecks = "1.2.0"
 googlePlayServices = "4.3.15"
 kotlinxCollectionsImmutable = "0.3.5"
-compose-multiplatform = "1.5.0"
+compose-multiplatform = "1.5.1"
 voyager = "1.0.0-rc07"
 moko = "0.23.0"
 
