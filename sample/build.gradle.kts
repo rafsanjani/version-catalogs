@@ -58,5 +58,8 @@ dependencies {
     testImplementation(libs.androidx.paging.testing)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.activity.ktx)
+    implementation(libs.koin.core)
+    implementation(libs.koin.test)
+    implementation(libs.koin.android)
     testImplementation(libs.junit.junit)
 }
