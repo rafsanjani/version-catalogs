@@ -52,6 +52,10 @@ dependencies {
     implementation(libs.dagger.hilt)
     implementation(libs.compose.ui.tooling)
     implementation(libs.androidx.material)
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.common)
+    testImplementation(libs.androidx.paging.testing)
     implementation(libs.androidx.activity.compose)
     testImplementation(libs.junit.junit)
 }
