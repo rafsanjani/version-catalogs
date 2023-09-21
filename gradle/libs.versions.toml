@@ -1,4 +1,5 @@
 [versions]
+activity = "1.8.0-rc01"
 compileSdk = "34"
 metricsPerformance = "1.0.0-alpha04"
 minimumSdk = "28"
@@ -64,6 +65,7 @@ firebaseCrashlyticsPlugin = "2.9.2"
 
 
 [libraries]
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 androidx-metrics-performance = { module = "androidx.metrics:metrics-performance", version.ref = "metricsPerformance" }
 androidx-material = { module = "com.google.android.material:material", version.ref = "material2" }
 assertk-common = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
