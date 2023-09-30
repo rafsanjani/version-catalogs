@@ -1,6 +1,6 @@
 import org.gradle.internal.impldep.org.bouncycastle.cms.RecipientId.password
 
-val libraryVersion = "2023.09.26"
+val libraryVersion = "2023.10.01"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
