@@ -63,6 +63,7 @@ kotlinPoet = "1.14.2"
 javaPoet = "1.13.0"
 firebasePerfPlugin = "1.4.2"
 firebaseCrashlyticsPlugin = "2.9.2"
+paparazzi = "1.3.1"
 
 
 [libraries]
@@ -93,6 +94,7 @@ compose-material-material3-windowSizeClass = { module = "androidx.compose.materi
 kalendar = { module = "com.himanshoe:kalendar", version.ref = "kalendar" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-jvm = { module = "io.insert-koin:koin-core-jvm", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotestRunnerJunit5" }
 kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlinInject" }
@@ -121,6 +123,7 @@ square-sqldelight-driver-android = { module = "app.cash.sqldelight:android-drive
 square-sqldelight-driver-sqlite = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 square-sqldelight-coroutinesExt = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
 
+cashapp-paparazzi = { module = "app.cash.paparazzi:paparazzi", version.ref = "paparazzi" }
 #Leak Canary
 square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.12"
 
@@ -151,7 +154,8 @@ kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotlin-coroutines-native = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
+kotlin-coroutines-native = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 
 kotlin-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.1"
 
@@ -321,6 +325,7 @@ google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazzi" }
 mokoResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 versions-plugin = { id = "com.github.ben-manes.versions", version.require = "0.49.0" }
