@@ -64,6 +64,7 @@ javaPoet = "1.13.0"
 firebasePerfPlugin = "1.4.2"
 firebaseCrashlyticsPlugin = "2.9.2"
 paparazzi = "1.3.1"
+richTextEditor = "1.0.0-beta03"
 
 
 [libraries]
@@ -88,6 +89,7 @@ compose-animation-animation = { module = "androidx.compose.animation:animation" 
 compose-material-material2 = { module = "androidx.compose.material:material", version.ref = "compose-material" }
 compose-material-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 compose-material-material3-windowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3" }
+richTextEditor = { module = "com.mohamedrejeb.richeditor:richeditor-compose", version.ref = "richTextEditor" }
 
 
 #Kotlin Libs
