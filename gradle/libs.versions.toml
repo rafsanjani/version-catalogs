@@ -285,7 +285,7 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 
 # Lone wolves
-desugaring = "com.android.tools:desugar_jdk_libs:2.0.3"
+desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
 lottie-compose = "com.airbnb.android:lottie-compose:6.1.0"
 falcon = "com.jraska:falcon:2.2.0"
