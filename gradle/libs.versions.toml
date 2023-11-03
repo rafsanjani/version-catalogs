@@ -21,7 +21,7 @@ moko = "0.23.0"
 ktor = "2.3.5"
 
 kalendar = "1.3.1"
-kotestRunnerJunit5 = "5.7.2"
+kotestRunnerJunit5 = "5.8.0"
 kotlinInject = "0.6.3"
 material2 = "1.10.0"
 compose-material = "1.6.0-alpha08"
