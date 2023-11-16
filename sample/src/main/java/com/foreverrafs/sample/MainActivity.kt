@@ -58,7 +58,7 @@ private fun Content(text: String) {
                 ),
                 sheetContent = {
                     Text(
-                        text = "Hello from bottom sheet",
+                        text = "Hello from bottom sheet. $text",
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         style = MaterialTheme.typography.headlineMedium,
