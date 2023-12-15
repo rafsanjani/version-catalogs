@@ -225,7 +225,7 @@ ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "kto
 google-playservices-gradlePlugin = "com.google.gms:google-services:4.4.0"
 google-playservices-core = "com.google.android.play:core-ktx:1.8.1"
 google-playservices-location = "com.google.android.gms:play-services-location:21.0.1"
-google-material = "com.google.android.material:material:1.10.0"
+google-material = "com.google.android.material:material:1.11.0"
 
 #Voyager
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
