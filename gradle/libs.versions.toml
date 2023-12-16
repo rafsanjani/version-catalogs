@@ -70,6 +70,7 @@ richTextEditor = "1.0.0-beta05"
 stately = "2.0.6"
 mockmp = "1.16.0"
 sonar = "4.4.1.3373"
+buildkonfig = "0.15.1"
 
 
 [libraries]
@@ -350,3 +351,4 @@ kmpNativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref
 testLogger = { id = "com.adarshr.test-logger", version.require = "4.0.0" }
 sonar = { id = "org.sonarqube", version.ref = "sonar" }
 mockmp = { id = "org.kodein.mock.mockmp", version.ref = "mockmp" }
+buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
