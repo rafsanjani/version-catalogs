@@ -98,6 +98,8 @@ compose-material-material3 = { module = "androidx.compose.material3:material3", 
 compose-material-material3-windowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3" }
 richTextEditor = { module = "com.mohamedrejeb.richeditor:richeditor-compose", version.ref = "richTextEditor" }
 
+# Multiplatform mocking
+mockmp-runtime = { module = "org.kodein.mock:mockmp-runtime", version.ref = "mockmp" }
 #Touchlab Stately
 touchlab-stately = { module = "co.touchlab:stately-common", version.ref = "stately" }
 touchlab-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
