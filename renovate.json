@@ -1,8 +1,10 @@
 {
+  "extends": ["config:base"],
   "packageRules": [
     {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["major","minor", "patch"],
+      "packageNames": ["*"],
+      "packagePatterns": ["gradle"],
+      "enabledManagers": ["gradle"],
       "automerge": true
     }
   ]
