@@ -302,7 +302,7 @@ android-tools-build-gradle = { module = "com.android.tools.build:gradle", versio
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
-lottie-compose = "com.airbnb.android:lottie-compose:6.2.0"
+lottie-compose = "com.airbnb.android:lottie-compose:6.3.0"
 falcon = "com.jraska:falcon:2.2.0"
 assertJ = "org.assertj:assertj-core:3.25.1"
 screengrab = "tools.fastlane:screengrab:2.1.1"
