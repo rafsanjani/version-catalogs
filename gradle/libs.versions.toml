@@ -2,7 +2,7 @@
 activity = "1.8.2"
 compileSdk = "34"
 koin = "3.5.3"
-metricsPerformance = "1.0.0-alpha04"
+metricsPerformance = "1.0.0-beta01"
 minimumSdk = "28"
 targetSdk = "34"
 appVersionCode = "80"
