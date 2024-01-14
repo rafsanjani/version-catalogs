@@ -295,7 +295,7 @@ androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref =
 androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.1.0"
 androidx-hilt-navigation-fragment = "androidx.hilt:hilt-navigation-fragment:1.1.0"
 
-affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.1"
+affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.2"
 
 android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 
