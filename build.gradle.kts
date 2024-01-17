@@ -29,11 +29,11 @@ signing {
 val publishingUsername: String? = System.getenv("MAVEN_CENTRAL_USERNAME")
 val publishingPassword: String? = System.getenv("MAVEN_CENTRAL_PASSWORD")
 
-if (publishingUsername == null || publishingPassword == null) {
-    error("MAVEN_CENTRAL_USERNAME and MAVEN_CENTRAL_PASSWORD not found!!")
-}
-
 nexusPublishing {
+    if (publishingUsername == null || publishingPassword == null) {
+        error("MAVEN_CENTRAL_USERNAME and MAVEN_CENTRAL_PASSWORD not found!!")
+    }
+
     repositories {
         sonatype {
             useStaging.set(true)
