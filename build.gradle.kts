@@ -59,8 +59,11 @@ fun incrementVersion() {
     val fileContents = Files.readAllLines(Path(configPath))
         ?: throw IllegalStateException("Error reading libs.version.toml file from $configPath")
 
+
+    val predicate = { str: String -> str.contains("libraryVersion") }
+
     val oldVersion = fileContents
-        .firstOrNull { it.contains("libraryVersion") }
+        .firstOrNull(predicate)
         ?.split("=")
         ?.last()
         ?.replace("\"", "")
@@ -77,7 +80,7 @@ fun incrementVersion() {
     }
 
     for (i in fileContents.indices) {
-        if (fileContents[i] == oldVersion) {
+        if (predicate(fileContents[i])) {
             fileContents[i] = "val libraryVersion = \"$updatedVersion\""
             break
         }
