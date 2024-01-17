@@ -13,7 +13,7 @@ jobs:
   updateversion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
@@ -23,7 +23,7 @@ jobs:
 
       - name: Set current date as environment variable
         run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
-      - name: Echo current date
+      - name: Print current date
         run: echo $NOW
 
       - name: Create Pull Request
