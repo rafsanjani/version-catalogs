@@ -1,3 +1,8 @@
+import java.nio.file.Files
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import kotlin.io.path.Path
+
 val libraryVersion = "2024.01.17"
 val libraryGroup = "io.github.rafsanjani"
 
@@ -40,6 +45,49 @@ nexusPublishing {
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
         }
     }
+}
+
+tasks.register("incrementVersionCode") {
+    group = "Gradle Version Updater"
+    description = "Updates the version code in build.gradle.kts file"
+
+    doLast {
+        incrementVersion()
+    }
+}
+
+fun incrementVersion() {
+    val configPath = "${project.rootDir.absolutePath}/build.gradle.kts"
+
+    println(configPath)
+    val fileContents = Files.readAllLines(Path(configPath))
+        ?: throw IllegalStateException("Error reading libs.version.toml file from $configPath")
+
+    val oldVersion = fileContents
+        .firstOrNull { it.contains("libraryVersion") }
+        ?.split("=")
+        ?.last()
+        ?.replace("\"", "")
+        ?.trim()
+
+    println("Old version: $oldVersion")
+
+    val updatedVersion = DateTimeFormatter.ofPattern("yyyy.MM.dd").format(LocalDate.now())
+    println("New version: $updatedVersion")
+
+    if (oldVersion == null) {
+        println("ERROR: Error parsing version number from build.gradle.kts file")
+        return
+    }
+
+    for (i in fileContents.indices) {
+        if (fileContents[i] == oldVersion) {
+            fileContents[i] = "val libraryVersion = \"$updatedVersion\""
+            break
+        }
+    }
+
+    Files.write(Path(configPath), fileContents)
 }
 
 publishing {
