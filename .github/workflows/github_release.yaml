@@ -9,7 +9,7 @@ on:
     - cron: '30 2 * * 0'
 
 jobs:
-  deploy:
+  trigger_release:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
