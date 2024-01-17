@@ -27,12 +27,13 @@ jobs:
         run: echo ${{env.NOW}}
 
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: Bump android version code to ${{env.NOW}}
           token: ${{secrets.SECRET_GITHUB}}
           title: Bump Android Version Code to ${{env.NOW}}
-          body: Beep boop. Hey there, I have just incremented the version code i
+          body: Beep boop. Hey there, I have just incremented the version code
 
       - name: Enable Pull Request Automerge
         if: steps.cpr.outputs.pull-request-operation == 'created'
