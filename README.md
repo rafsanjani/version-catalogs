@@ -1,5 +1,7 @@
 
-## Version Catalogs
+## Version Catalogs 
+![Maven Central](https://img.shields.io/maven-central/v/io.github.rafsanjani/versions)
+
 In this repo, i have published all my most commonly used dependencies as a binary on maven central. 
 
 ### Why did I do this
@@ -18,7 +20,7 @@ dependencyResolutionManagement {
   
 versionCatalogs {  
   create("libs") {  
-    from("io.github.rafsanjani:versions:0.3.3")
+    from("io.github.rafsanjani:versions:<latest.version>")
   }  
 }
 ```
@@ -35,7 +37,7 @@ dependencyResolutionManagement {
   
 versionCatalogs {  
   create("libs") {  
-    from("io.github.rafsanjani:versions:0.3.3")
+    from("io.github.rafsanjani:versions:<latest.version>")
     version("kotlin","1.8.22") //override kotlin version
   }  
 }  
