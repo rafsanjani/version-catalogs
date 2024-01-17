@@ -24,14 +24,14 @@ jobs:
       - name: Set current date as environment variable
         run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
       - name: Print current date
-        run: echo $NOW
+        run: echo ${{env.NOW}}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: Bump android version code to $NOW
+          commit-message: Bump android version code to ${{env.NOW}}
           token: ${{secrets.SECRET_GITHUB}}
-          title: Bump Android Version Code to $NOW
+          title: Bump Android Version Code to ${{env.NOW}}
           body: Beep boop. Hey there, I have just incremented the version code i
 
       - name: Enable Pull Request Automerge
