@@ -1,0 +1,22 @@
+# This workflow will trigger release.sh every week. release.sh uses Github cli to create a tag and generate
+# a Github release. This Github release will in-turn trigger release.yaml to send a full release to maven central
+name: Trigger Release process
+
+on:
+  workflow_dispatch:
+  schedule:
+    #    At 2:30am every week on a sunday. This runs 1hour after the version updater
+    - cron: '30 2 * * 0'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Github Release
+        run: ./.github/workflows/release.sh
