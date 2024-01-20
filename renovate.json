@@ -2,9 +2,11 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "packageNames": ["*"],
-      "packagePatterns": ["gradle"],
-      "enabledManagers": ["gradle"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     }
   ]
