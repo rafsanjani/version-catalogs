@@ -19,7 +19,7 @@ compose-multiplatform = "1.5.12"
 voyager = "1.0.0"
 moko = "0.23.0"
 ktor = "2.3.8"
-kermit = "2.0.2"
+kermit = "2.0.3"
 openaiKotlin = "3.6.3"
 
 kalendar = "1.3.1"
