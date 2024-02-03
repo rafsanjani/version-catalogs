@@ -300,6 +300,11 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 
 android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 
+# Convention Plugins (They cannot read actual plugins from the plugins section)
+conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
+conventionplugins-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+conventionplugins-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
