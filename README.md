@@ -2,7 +2,7 @@
 ## Version Catalogs 
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.rafsanjani/versions)
 
-In this repo, i have published all my most commonly used dependencies as a binary on maven central. 
+In this repo, i have published all my most commonly used dependencies as an artifact on maven central. 
 
 ### Why did I do this
 Well to begin with, I like experimenting a lot, which means creating lots of projects sometimes and throwing them away after experimentation.  I got bored of having to look up dependencies whenever I needed them and decided to publish my own combination of libraries to maven instead. 
