@@ -305,6 +305,7 @@ android-tools-build-gradle = { module = "com.android.tools.build:gradle", versio
 conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
 conventionplugins-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 conventionplugins-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+conventionPlugins-ktlint = { module = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
