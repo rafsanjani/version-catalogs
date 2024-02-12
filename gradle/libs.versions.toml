@@ -56,9 +56,7 @@ junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
-com-google-android-material-material = "1.11.0"
 runner = "1.0.2"
-com-android-support-test-espresso-espresso-core = "3.0.2"
 nexusPublish = "1.3.0"
 androidx-hilt-compiler = "1.1.0"
 kotlinPoet = "1.16.0"
@@ -100,6 +98,7 @@ richTextEditor = { module = "com.mohamedrejeb.richeditor:richeditor-compose", ve
 
 # Multiplatform mocking
 mockmp-runtime = { module = "org.kodein.mock:mockmp-runtime", version.ref = "mockmp" }
+
 #Touchlab Stately
 touchlab-stately = { module = "co.touchlab:stately-common", version.ref = "stately" }
 touchlab-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
@@ -308,8 +307,10 @@ android-tools-build-gradle = { module = "com.android.tools.build:gradle", versio
 conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
 conventionplugins-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 conventionplugins-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-conventionPlugins-ktlint = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "ktlint" }
-conventionPlugins-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
+conventionplugins-ktlint = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "ktlint" }
+conventionplugins-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
+conventionplugins-sonar = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin", version.ref = "sonar" }
+
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
@@ -330,7 +331,7 @@ junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "benchmark-macro-junit4" }
-material = { group = "com.google.android.material", name = "material", version.ref = "com-google-android-material-material" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material2" }
 
 # Dependencies of the included build-logic
 work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.0" }
