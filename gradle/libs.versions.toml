@@ -71,6 +71,7 @@ sonar = "4.4.1.3373"
 buildkonfig = "0.15.1"
 kover = "0.7.5"
 baselineprofile = "1.2.3"
+mockative = "2.0.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -302,6 +303,9 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 swipebox = "me.saket.swipe:swipe:1.3.0"
 
 android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+
+mockative-runtime = { module = "io.mockative:mockative", version.ref = "mockative" }
+mockative-processor = { module = "io.mockative:mockative-processor", version.ref = "mockative" }
 
 # Convention Plugins (They cannot read actual plugins from the plugins section)
 conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
