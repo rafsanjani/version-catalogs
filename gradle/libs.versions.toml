@@ -296,7 +296,7 @@ androidx-test-espressoCore = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-espressoWeb = "androidx.test.espresso:espresso-web:3.5.1"
 androidx-hilt-work = "androidx.hilt:hilt-work:1.1.0"
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt-compiler" }
-androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.1.0"
+androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.2.0"
 androidx-hilt-navigation-fragment = "androidx.hilt:hilt-navigation-fragment:1.1.0"
 
 affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.3.0"
