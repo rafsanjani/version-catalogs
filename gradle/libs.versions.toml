@@ -318,7 +318,7 @@ conventionplugins-sonar = { module = "org.sonarsource.scanner.gradle:sonarqube-g
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
-lottie-compose = "com.airbnb.android:lottie-compose:6.3.0"
+lottie-compose = "com.airbnb.android:lottie-compose:6.4.0"
 falcon = "com.jraska:falcon:2.2.0"
 assertJ = "org.assertj:assertj-core:3.25.3"
 screengrab = "tools.fastlane:screengrab:2.1.1"
