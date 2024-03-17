@@ -336,7 +336,7 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "benchmark-macro-junit4" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material2" }
-uuid = "com.benasher44:uuid:0.8.2"
+uuid = "com.benasher44:uuid:0.8.3"
 
 # Dependencies of the included build-logic
 work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.0" }
