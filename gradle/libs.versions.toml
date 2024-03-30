@@ -71,7 +71,7 @@ sonar = "5.0.0.4638"
 buildkonfig = "0.15.1"
 kover = "0.7.6"
 baselineprofile = "1.2.3"
-mockative = "2.0.1"
+mockative = "2.1.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
