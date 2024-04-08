@@ -18,7 +18,7 @@ kotlinxCollectionsImmutable = "0.3.7"
 compose-multiplatform = "1.6.1"
 voyager = "1.0.0"
 moko = "0.23.0"
-ktor = "2.3.9"
+ktor = "2.3.10"
 kermit = "2.0.3"
 openaiKotlin = "3.7.1"
 
