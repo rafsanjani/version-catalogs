@@ -70,7 +70,7 @@ mockmp = "1.17.0"
 sonar = "5.0.0.4638"
 buildkonfig = "0.15.1"
 kover = "0.7.6"
-baselineprofile = "1.2.3"
+baselineprofile = "1.2.4"
 mockative = "2.2.0"
 compose-rules="0.3.15"
 
