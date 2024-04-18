@@ -8,7 +8,7 @@ targetSdk = "34"
 appVersionCode = "80"
 
 assertk = "0.28.0"
-compose-compiler = "1.5.2"
+compose-compiler = "1.5.11"
 dagger = "2.51.1"
 compose-bom = "2024.04.00"
 benchmark-macro-junit4 = "1.2.4"
