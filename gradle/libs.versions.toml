@@ -7,7 +7,7 @@ minimumSdk = "28"
 targetSdk = "34"
 appVersionCode = "80"
 
-assertk = "0.28.0"
+assertk = "0.28.1"
 compose-compiler = "1.5.11"
 dagger = "2.51.1"
 compose-bom = "2024.04.00"
