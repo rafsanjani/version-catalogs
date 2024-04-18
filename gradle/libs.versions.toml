@@ -343,7 +343,7 @@ uuid = "com.benasher44:uuid:0.8.4"
 # Dependencies of the included build-logic
 work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.0" }
 detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules" }
-detekt-rules-ktlint = { module = "io.nlopez.compose.rules:ktlint", version.ref = "compose-rules" }
+ktlint-rules-compose = { module = "io.nlopez.compose.rules:ktlint", version.ref = "compose-rules" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
