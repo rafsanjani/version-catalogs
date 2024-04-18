@@ -194,7 +194,7 @@ androidx-lifecycle-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewm
 androidx-startup = "androidx.startup:startup-runtime:1.1.1"
 androidx-palette = "androidx.palette:palette-ktx:1.0.0"
 androidx-datastore-preferencesCore = "androidx.datastore:datastore-preferences-core:1.1.0"
-androidx-datastore-preferences = "androidx.datastore:datastore-preferences:1.0.0"
+androidx-datastore-preferences = "androidx.datastore:datastore-preferences:1.1.0"
 androidx-test-ext-junit = "androidx.test.ext:junit:1.1.5"
 
 #Work
