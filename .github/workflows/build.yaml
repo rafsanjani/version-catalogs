@@ -12,13 +12,13 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v3
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrappper-validation
 
-      - name: Build
-        env:
-          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: build
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Execute Gradle build
+        run: ./gradlew build
+
+
