@@ -8,7 +8,7 @@ targetSdk = "34"
 appVersionCode = "80"
 
 assertk = "0.28.1"
-compose-compiler = "1.5.12"
+compose-compiler = "1.5.13"
 dagger = "2.51.1"
 compose-bom = "2024.05.00"
 benchmark-macro-junit4 = "1.2.4"
@@ -31,8 +31,8 @@ material3 = "1.2.1"
 gradle = "8.4.0"
 detekt = "1.23.6"
 ktlint = "12.1.1"
-kotlin = "1.9.23"
-ksp = "1.9.23-1.0.20"
+kotlin = "2.0.0-RC2"
+ksp = "2.0.0-RC2-1.0.20"
 coroutines = "1.8.1"
 okhttp = "5.0.0-alpha.14"
 coil = "2.6.0"
@@ -40,7 +40,7 @@ androidxtest = "1.5.2"
 media3 = "1.3.1"
 paging = "3.3.0-rc01"
 androidxnavigation = "2.7.7"
-firebase = "32.8.1"
+firebase = "33.0.0"
 firebase-plugin = "3.0.0"
 moshi = "1.15.1"
 retrofit = "2.11.0"
@@ -77,7 +77,6 @@ compose-rules="0.3.20"
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 androidx-metrics-performance = { module = "androidx.metrics:metrics-performance", version.ref = "metricsPerformance" }
-androidx-material = { module = "com.google.android.material:material", version.ref = "material2" }
 assertk-common = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
 compose-lint-checks = { module = "com.slack.lint.compose:compose-lint-checks", version.ref = "composeLintChecks" }
@@ -259,7 +258,6 @@ androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.re
 androidx-test-uiAutomator = "androidx.test.uiautomator:uiautomator:2.3.0"
 androidx-profileinstaller = "androidx.profileinstaller:profileinstaller:1.3.1"
 androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "baselineprofile" }
-androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.3.0"
 
 #Paging
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
@@ -333,20 +331,14 @@ detekt-formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6"
 napier = "io.github.aakira:napier:2.7.1"
 junit = "junit:junit:4.13.2"
 datePickerTimeline = "com.github.Rafsanjani:datepickertimeline:0.7.1"
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
-junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "benchmark-macro-junit4" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material2" }
 uuid = "com.benasher44:uuid:0.8.4"
 
 # Dependencies of the included build-logic
-work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.0" }
 detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules" }
 ktlint-rules-compose = { module = "io.nlopez.compose.rules:ktlint", version.ref = "compose-rules" }
 
 [plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "gradle" }
 android-library = { id = "com.android.library", version.ref = "gradle" }
 android-test = { id = "com.android.test", version.ref = "gradle" }

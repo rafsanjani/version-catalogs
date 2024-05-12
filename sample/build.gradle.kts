@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -39,9 +40,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
 }
 
 dependencies {
@@ -51,7 +49,7 @@ dependencies {
     ksp(libs.dagger.compiler)
     implementation(libs.dagger.hilt)
     implementation(libs.compose.ui.tooling)
-    implementation(libs.androidx.material)
+    implementation(libs.google.material)
     implementation(libs.androidx.paging.compose)
     implementation(libs.androidx.paging.runtime)
     implementation(libs.androidx.paging.common)
@@ -61,5 +59,5 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.test)
     implementation(libs.koin.android)
-    testImplementation(libs.junit.junit)
+    testImplementation(libs.junit)
 }
