@@ -3,6 +3,13 @@ name: Build
 on: [ push, pull_request ]
 
 jobs:
+  validation:
+    name: "Validation"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gradle/actions/wrapper-validation@v3
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -12,13 +19,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrappper-validation
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Execute Gradle build
+      - name: Build with gradle
         run: ./gradlew build
-
-
