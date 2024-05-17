@@ -72,7 +72,7 @@ buildkonfig = "0.15.1"
 kover = "0.8.0"
 baselineprofile = "1.2.4"
 mockative = "2.2.1"
-compose-rules="0.4.0"
+compose-rules="0.4.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
