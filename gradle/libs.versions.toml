@@ -74,7 +74,7 @@ baselineprofile = "1.2.4"
 mockative = "2.2.2"
 compose-rules="0.4.4"
 sentry="7.10.0"
-mokkery = "2.0.0
+mokkery = "2.0.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
