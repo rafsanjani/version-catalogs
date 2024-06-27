@@ -296,7 +296,7 @@ androidx-media3-decoder = { module = "androidx.media3:media3-decoder", version.r
 androidx-media3-common = { module = "androidx.media3:media3-common", version.ref = "media3" }
 androidx-media3-datasource = { module = "androidx.media3:media3-datasource", version.ref = "media3" }
 
-androidx-test-espressoCore = "androidx.test.espresso:espresso-core:3.6.0"
+androidx-test-espressoCore = "androidx.test.espresso:espresso-core:3.6.1"
 androidx-test-espressoWeb = "androidx.test.espresso:espresso-web:3.6.0"
 androidx-hilt-work = "androidx.hilt:hilt-work:1.2.0"
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt-compiler" }
