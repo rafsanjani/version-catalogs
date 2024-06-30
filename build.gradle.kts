@@ -3,7 +3,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.io.path.Path
 
-val libraryVersion = "2024.06.23"
+val libraryVersion = "2024.06.30"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
