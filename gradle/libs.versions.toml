@@ -74,7 +74,7 @@ kover = "0.8.3"
 baselineprofile = "1.2.4"
 mockative = "2.2.2"
 compose-rules = "0.4.5"
-sentry = "7.12.0"
+sentry = "7.12.1"
 mokkery = "2.1.1"
 kotlinSerialization="1.7.1"
 
