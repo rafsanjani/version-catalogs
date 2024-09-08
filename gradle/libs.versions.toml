@@ -333,7 +333,7 @@ screengrab = "tools.fastlane:screengrab:2.1.1"
 mockk = "io.mockk:mockk:1.13.12"
 turbine = "app.cash.turbine:turbine:1.1.0"
 timber = "com.jakewharton.timber:timber:5.0.1"
-detekt-formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6"
+detekt-formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:1.23.7"
 
 napier = "io.github.aakira:napier:2.7.1"
 junit = "junit:junit:4.13.2"
