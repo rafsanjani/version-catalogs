@@ -76,7 +76,7 @@ mockative = "2.2.2"
 compose-rules = "0.4.12"
 sentry = "7.14.0"
 mokkery = "2.3.0"
-kotlinSerialization="1.7.2"
+kotlinSerialization="1.7.3"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
