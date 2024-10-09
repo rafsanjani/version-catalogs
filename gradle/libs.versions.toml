@@ -19,7 +19,7 @@ compose-multiplatform = "1.6.11"
 voyager = "1.0.0"
 moko-resources = "0.24.3"
 moko-permissions = "0.18.0"
-ktor = "2.3.12"
+ktor = "3.0.0"
 kermit = "2.0.4"
 openaiKotlin = "3.8.2"
 
