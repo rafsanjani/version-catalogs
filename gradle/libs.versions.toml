@@ -79,6 +79,7 @@ compose-rules = "0.4.16"
 sentry = "7.15.0"
 mokkery = "2.4.0"
 kotlinSerialization = "1.7.3"
+supabase = "3.0.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -325,6 +326,13 @@ android-tools-build-gradle = { module = "com.android.tools.build:gradle", versio
 
 mockative-runtime = { module = "io.mockative:mockative", version.ref = "mockative" }
 mockative-processor = { module = "io.mockative:mockative-processor", version.ref = "mockative" }
+
+# Supabase
+supabase-bom = { module = "io.github.jan-tennert.supabase:bom", version.ref = "supabase" }
+supabase-auth = { module = "io.github.jan-tennert.supabase:auth-kt", version.ref = "supabase" }
+supabase-realtime = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabase" }
+supabase-posgrest = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "supabase" }
+supabase-compose-auth = { module = "io.github.jan-tennert.supabase:compose-auth", version.ref = "supabase" }
 
 # Convention Plugins (They cannot read actual plugins from the plugins section)
 conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
