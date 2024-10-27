@@ -347,7 +347,7 @@ conventionplugins-buildKonfig-compiler = { module = "com.codingfeline.buildkonfi
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.1.2"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
-lottie-compose = "com.airbnb.android:lottie-compose:6.5.2"
+lottie-compose = "com.airbnb.android:lottie-compose:6.6.0"
 falcon = "com.jraska:falcon:2.2.0"
 assertJ = "org.assertj:assertj-core:3.26.3"
 screengrab = "tools.fastlane:screengrab:2.1.1"
