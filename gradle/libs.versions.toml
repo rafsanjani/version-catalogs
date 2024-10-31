@@ -192,7 +192,7 @@ coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coil" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
 androidx-appcompat = "androidx.appcompat:appcompat:1.7.0"
-androidx-core = "androidx.core:core-ktx:1.13.1"
+androidx-core = "androidx.core:core-ktx:1.15.0"
 androidx-activity-compose = "androidx.activity:activity-compose:1.9.3"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.8.5"
 androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
