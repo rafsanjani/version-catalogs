@@ -396,3 +396,4 @@ mockmp = { id = "org.kodein.mock.mockmp", version.ref = "mockmp" }
 buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 mokkery = { id = "dev.mokkery", version.ref = "mokkery" }
+sentry = { id = "io.sentry:sentry-android-gradle-plugin", version.require = "4.13.0" }
