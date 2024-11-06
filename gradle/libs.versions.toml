@@ -80,6 +80,7 @@ sentry = "7.16.0"
 mokkery = "2.5.0"
 kotlinSerialization = "1.7.3"
 supabase = "3.0.1"
+maps-compose = "6.2.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -249,6 +250,7 @@ google-playservices-appUpdate = "com.google.android.play:app-update:2.1.0"
 google-playservices-identity = "com.google.android.libraries.identity.googleid:googleid:1.1.1"
 google-material = "com.google.android.material:material:1.12.0"
 google-testparameterinjector = "com.google.testparameterinjector:test-parameter-injector:1.18"
+google-maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps-compose" }
 
 #Voyager
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
