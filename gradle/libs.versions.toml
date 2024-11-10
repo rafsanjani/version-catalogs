@@ -1,10 +1,10 @@
 [versions]
 activity = "1.9.3"
-compileSdk = "34"
+compileSdk = "35"
 koin = "4.0.0"
 metricsPerformance = "1.0.0-beta01"
 minimumSdk = "28"
-targetSdk = "34"
+targetSdk = "35"
 appVersionCode = "80"
 
 assertk = "0.28.1"
