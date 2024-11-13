@@ -336,7 +336,6 @@ androidx-hilt-navigation-fragment = "androidx.hilt:hilt-navigation-fragment:1.2.
 affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.3.1"
 swipebox = "me.saket.swipe:swipe:1.3.0"
 
-android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 
 mockative-runtime = { module = "io.mockative:mockative", version.ref = "mockative" }
 mockative-processor = { module = "io.mockative:mockative-processor", version.ref = "mockative" }
@@ -351,13 +350,14 @@ supabase-compose-auth = { module = "io.github.jan-tennert.supabase:compose-auth"
 # Convention Plugins (They cannot read actual plugins from the plugins section)
 conventionplugins-kover = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
 conventionplugins-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
-conventionplugins-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+conventionplugins-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 conventionplugins-ktlint = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "ktlint" }
 conventionplugins-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
 conventionplugins-sonar = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin", version.ref = "sonar" }
 conventionplugins-buildKonfig-plugin = { module = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "buildkonfig" }
 conventionplugins-buildKonfig-compiler = { module = "com.codingfeline.buildkonfig:buildkonfig-compiler", version.ref = "buildkonfig" }
-
+conventionplugins-android = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+conventionplugins-compose-compiler = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.1.3"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
