@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("remoteLibs") {
-            from("io.github.rafsanjani:versions:2024.11.15")
+            from("io.github.rafsanjani:versions:2024.11.17")
         }
     }
 }
