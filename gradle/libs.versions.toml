@@ -107,7 +107,7 @@ compose-material-material3 = { module = "androidx.compose.material3:material3", 
 compose-material-material3-windowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3" }
 richTextEditor = { module = "com.mohamedrejeb.richeditor:richeditor-compose", version.ref = "richTextEditor" }
 sentry-android = { module = "io.sentry:sentry-android", version.ref = "sentry" }
-store = { module = "org.mobilenativefoundation.store:store5", version.ref = "store" }
+mobilenativefoundation.store5 = { module = "org.mobilenativefoundation.store:store5", version.ref = "store" }
 
 # Multiplatform mocking
 mockmp-runtime = { module = "org.kodein.mock:mockmp-runtime", version.ref = "mockmp" }
