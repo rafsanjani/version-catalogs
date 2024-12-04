@@ -80,7 +80,7 @@ compose-rules = "0.4.19"
 sentry = "7.18.1"
 mokkery = "2.6.0"
 kotlinSerialization = "1.7.3"
-supabase = "3.0.2"
+supabase = "3.0.3"
 maps-compose = "6.3.0"
 store = "5.1.0"
 
