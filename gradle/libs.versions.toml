@@ -124,7 +124,8 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-jvm = { module = "io.insert-koin:koin-core-jvm", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-compose", version.require = "4.0.1" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.require = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotestRunnerJunit5" }
 kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlinInject" }
 kotlin-inject-compiler-ksp = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlinInject" }
