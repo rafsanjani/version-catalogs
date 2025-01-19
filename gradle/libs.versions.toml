@@ -1,5 +1,5 @@
 [versions]
-activity = "1.9.3"
+activity = "1.10.0"
 compileSdk = "35"
 koin = "4.0.1"
 metricsPerformance = "1.0.0-beta01"
