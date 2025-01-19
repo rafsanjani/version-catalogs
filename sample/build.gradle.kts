@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.foreverrafs.sample"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.foreverrafs.sample"
