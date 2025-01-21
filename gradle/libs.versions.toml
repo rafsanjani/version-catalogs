@@ -1,7 +1,7 @@
 [versions]
 activity = "1.10.0"
 compileSdk = "35"
-koin = "4.0.1"
+koin = "4.0.2"
 metricsPerformance = "1.0.0-beta01"
 minimumSdk = "28"
 targetSdk = "35"
