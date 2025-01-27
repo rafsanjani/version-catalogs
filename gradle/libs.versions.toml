@@ -81,7 +81,7 @@ sentry = "8.0.0"
 mokkery = "2.6.1"
 kotlinSerialization = "1.8.0"
 supabase = "3.0.3"
-maps-compose = "6.4.1"
+maps-compose = "6.4.2"
 store = "5.1.0"
 
 [libraries]
