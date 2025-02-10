@@ -193,7 +193,7 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
-kotlin-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.1"
+kotlin-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.2"
 
 #Coil
 coil-coil = { module = "io.coil-kt:coil", version.ref = "coil" }
