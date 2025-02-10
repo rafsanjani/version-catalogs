@@ -8,10 +8,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: macOs-latest
     timeout-minutes: 30
     env:
       GPG_KEY: ${{ secrets.GPG_KEY }}
+      MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+      MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+      SIGNING_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      SIGNING_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v4
@@ -19,18 +23,22 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
+          distribution: 'zulu'
           java-version: '17'
-      - name: Configure GPG Key
-        run: |
-          mkdir ~/.gpgkey
-          echo $GPG_KEY > ~/.gpgkey/secring.gpg.b64
-          base64 -d ~/.gpgkey/secring.gpg.b64 > ~/.gpgkey/secring.gpg
 
-      - name: Deploy to Sonatype
-        env:
-          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-
+      - name: Create GPG secring file
         run: |
-          ./gradlew publishToSonatype closeAndReleaseStagingRepository --no-parallel --no-daemon -Psigning.keyId=${{secrets.GPG_KEY_ID}} -Psigning.password=${{secrets.GPG_KEY_PASSWORD}} -Psigning.secretKeyRingFile=$(echo ~/.gpgkey/secring.gpg)
+          mkdir ~/.gnupg
+          cd ~/.gnupg
+          echo $GPG_KEY > secring.txt
+          base64 -i secring.txt -o secring.gpg
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Add MavenCentral credentials to gradle.properties file
+        run: ./scripts/secrets.sh
+
+      - name: Fire in the hole
+        run: |
+          ./gradlew publishAndReleaseToMavenCentral --no-parallel --no-daemon
