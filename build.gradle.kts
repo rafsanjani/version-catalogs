@@ -31,7 +31,7 @@ mavenPublishing {
     pom {
         name.set("version-catalog")
         description.set("Some personally curated android libraries")
-        url.set("https://github.com/rafsanjani/versions")
+        url.set("https://github.com/rafsanjani/version-catalogs")
 
         licenses {
             license {
