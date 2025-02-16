@@ -8,8 +8,8 @@ version = libraryVersion
 
 plugins {
     `version-catalog`
+    alias(libs.plugins.vanniktech.publish)
     id("com.foreverrafs.versionupdater")
-    id("com.vanniktech.maven.publish") version "0.30.0"
 }
 
 catalog {
