@@ -21,7 +21,7 @@ moko-permissions = "0.19.1"
 ktor = "3.1.1"
 kermit = "2.0.5"
 openaiKotlin = "4.0.1"
-credentials = "1.3.0"
+credentials = "1.5.0"
 
 kalendar = "1.3.2"
 kotestRunnerJunit5 = "5.9.1"
