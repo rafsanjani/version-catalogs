@@ -210,7 +210,7 @@ androidx-core = "androidx.core:core-ktx:1.15.0"
 androidx-core-uri = "org.jetbrains.androidx.core:core-uri:1.0.0-alpha01"
 androidx-activity-compose = "androidx.activity:activity-compose:1.10.1"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.8.6"
-androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
+androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-beta01"
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
