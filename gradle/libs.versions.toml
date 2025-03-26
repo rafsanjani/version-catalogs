@@ -293,6 +293,7 @@ androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.re
 androidx-test-uiAutomator = "androidx.test.uiautomator:uiautomator:2.3.0"
 androidx-profileinstaller = "androidx.profileinstaller:profileinstaller:1.4.1"
 androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "baselineprofile" }
+androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "1.4.0-alpha03" }
 
 #Paging
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
