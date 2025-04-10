@@ -377,7 +377,7 @@ conventionplugins-compose-compiler = { module = "org.jetbrains.kotlin:compose-co
 # Lone wolves
 desugaring = "com.android.tools:desugar_jdk_libs:2.1.5"
 snapper = "dev.chrisbanes.snapper:snapper:0.3.0"
-lottie-compose = "com.airbnb.android:lottie-compose:6.6.4"
+lottie-compose = "com.airbnb.android:lottie-compose:6.6.6"
 falcon = "com.jraska:falcon:2.2.0"
 assertJ = "org.assertj:assertj-core:3.27.3"
 screengrab = "tools.fastlane:screengrab:2.1.1"
