@@ -221,7 +221,7 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 androidx-lifecycle-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-startup = "androidx.startup:startup-runtime:1.2.0"
 androidx-palette = "androidx.palette:palette-ktx:1.0.0"
-androidx-datastore-core = "androidx.datastore:datastore-preferences-core:1.1.4"
+androidx-datastore-core = "androidx.datastore:datastore-preferences-core:1.1.5"
 androidx-datastore-preferences = "androidx.datastore:datastore-preferences:1.1.5"
 androidx-datastore-okio = "androidx.datastore:datastore-core-okio:1.1.5"
 androidx-test-ext-junit = "androidx.test.ext:junit:1.2.1"
