@@ -85,7 +85,8 @@ supabase = "3.1.4"
 maps-compose = "6.6.0"
 store = "5.1.0"
 biometric = "1.4.0-alpha03"
-kotlinxIO="0.7.0"
+kotlinxIO = "0.7.0"
+datastore = "1.15.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -221,9 +222,9 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 androidx-lifecycle-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-startup = "androidx.startup:startup-runtime:1.2.0"
 androidx-palette = "androidx.palette:palette-ktx:1.0.0"
-androidx-datastore-core = "androidx.datastore:datastore-preferences-core:1.1.5"
-androidx-datastore-preferences = "androidx.datastore:datastore-preferences:1.1.5"
-androidx-datastore-okio = "androidx.datastore:datastore-core-okio:1.1.5"
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "datastore" }
 androidx-test-ext-junit = "androidx.test.ext:junit:1.2.1"
 
 #Work
