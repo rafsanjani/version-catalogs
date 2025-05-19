@@ -431,4 +431,4 @@ kotlinx-kover-aggregation = { id = "org.jetbrains.kotlinx.kover.aggregation", ve
 mokkery = { id = "dev.mokkery", version.ref = "mokkery" }
 sentry = { id = "io.sentry.android.gradle", version.require = "5.6.0" }
 vanniktech-publish = { id = "com.vanniktech.maven.publish", version.require = "0.32.0" }
-foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version.require = "0.10.0" }
+foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version.require = "1.0.0" }
