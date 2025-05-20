@@ -214,7 +214,7 @@ androidx-appcompat = "androidx.appcompat:appcompat:1.7.0"
 androidx-core = "androidx.core:core-ktx:1.16.0"
 androidx-core-uri = "org.jetbrains.androidx.core:core-uri:1.0.0-alpha01"
 androidx-activity-compose = "androidx.activity:activity-compose:1.10.1"
-androidx-fragment = "androidx.fragment:fragment-ktx:1.8.6"
+androidx-fragment = "androidx.fragment:fragment-ktx:1.8.7"
 androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.1.0"
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
