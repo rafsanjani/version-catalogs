@@ -1,6 +1,6 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
-val libraryVersion = "2025.05.18"
+val libraryVersion = "2025.05.25"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
