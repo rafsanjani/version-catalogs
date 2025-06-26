@@ -268,7 +268,7 @@ ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "kto
 
 
 #Google
-google-playservices-gradlePlugin = "com.google.gms:google-services:4.4.2"
+google-playservices-gradlePlugin = "com.google.gms:google-services:4.4.3"
 google-playservices-core = "com.google.android.play:core-ktx:1.8.1"
 google-playservices-location = "com.google.android.gms:play-services-location:21.3.0"
 google-playservices-appUpdate = "com.google.android.play:app-update:2.1.0"
