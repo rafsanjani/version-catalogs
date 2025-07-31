@@ -228,7 +228,7 @@ androidx-palette = "androidx.palette:palette-ktx:1.0.0"
 androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "datastore" }
-androidx-test-ext-junit = "androidx.test.ext:junit:1.2.1"
+androidx-test-ext-junit = "androidx.test.ext:junit:1.3.0"
 
 #Work
 androidx-work = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
