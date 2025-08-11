@@ -16,7 +16,7 @@ jobs:
       GH_TOKEN: ${{secrets.SECRET_GITHUB}}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Generate Github Release
         run: ./.github/workflows/release.sh
