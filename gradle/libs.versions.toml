@@ -432,6 +432,6 @@ buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig"
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 kotlinx-kover-aggregation = { id = "org.jetbrains.kotlinx.kover.aggregation", version.ref = "kover" }
 mokkery = { id = "dev.mokkery", version.ref = "mokkery" }
-sentry = { id = "io.sentry.android.gradle", version.require = "5.8.1" }
+sentry = { id = "io.sentry.android.gradle", version.require = "5.9.0" }
 vanniktech-publish = { id = "com.vanniktech.maven.publish", version.require = "0.33.0" }
 foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version.require = "1.0.0" }
