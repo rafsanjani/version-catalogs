@@ -215,7 +215,7 @@ androidx-appcompat = "androidx.appcompat:appcompat:1.7.1"
 
 
 androidx-activity-compose = "androidx.activity:activity-compose:1.10.1"
-androidx-fragment = "androidx.fragment:fragment-ktx:1.8.8"
+androidx-fragment = "androidx.fragment:fragment-ktx:1.8.9"
 androidx-core-uri = {group = "org.jetbrains.androidx.core", name = "core-uri", version.ref = "androidx-core-uri" }
 androidx-core = {group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.1.0"
