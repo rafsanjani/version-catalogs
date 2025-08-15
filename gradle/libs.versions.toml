@@ -88,6 +88,7 @@ biometric = "1.4.0-alpha04"
 kotlinxIO = "0.8.0"
 datastore = "1.2.0-alpha02"
 androidx-core = "1.17.0"
+navigation3 = "1.0.0-alpha07"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -252,6 +253,11 @@ androidx-room-rxJava2 = { module = "androidx.room:room-rxjava2", version.ref = "
 androidx-room-guava = { module = "androidx.room:room-guava", version.ref = "room" }
 androidx-room-common = { module = "androidx.room:room-common", version.ref = "room" }
 androidx-room-rxJava3 = { module = "androidx.room:room-rxjava3", version.ref = "room" }
+
+#Navigation 3
+androidx-navigation3-runtime = { group = "androidx.navigation3",name="navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui-android = { group = "androidx.navigation3",name="navigation3-ui-android", version.ref = "navigation3" }
+
 
 #Ktor
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
