@@ -8,7 +8,7 @@ targetSdk = "35"
 
 assertk = "0.28.1"
 compose-compiler = "1.5.13"
-dagger = "2.57"
+dagger = "2.57.1"
 compose-bom = "2025.08.00"
 benchmark-macro-junit4 = "1.2.4"
 composeLintChecks = "1.4.2"
