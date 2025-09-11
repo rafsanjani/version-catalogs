@@ -1,10 +1,10 @@
 [versions]
 activity = "1.10.1"
-compileSdk = "35"
+compileSdk = "36"
 koin = "4.1.1"
 metricsPerformance = "1.0.0-beta04"
 minimumSdk = "28"
-targetSdk = "35"
+targetSdk = "36"
 
 assertk = "0.28.1"
 compose-compiler = "1.5.13"
