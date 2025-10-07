@@ -89,6 +89,7 @@ kotlinxIO = "0.8.0"
 datastore = "1.2.0-alpha02"
 androidx-core = "1.17.0"
 navigation3 = "1.0.0-alpha10"
+compose-hot-reload = "1.0.0-rc01"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -408,6 +409,7 @@ ktlint-rules-compose = { module = "io.nlopez.compose.rules:ktlint", version.ref 
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "gradle" }
+compose-hot-reload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload"}
 android-library = { id = "com.android.library", version.ref = "gradle" }
 android-test = { id = "com.android.test", version.ref = "gradle" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
