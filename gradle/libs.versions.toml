@@ -88,7 +88,7 @@ biometric = "1.4.0-alpha04"
 kotlinxIO = "0.8.0"
 datastore = "1.2.0-beta01"
 androidx-core = "1.17.0"
-navigation3 = "1.0.0-alpha11"
+navigation3 = "1.0.0-beta01"
 compose-hot-reload = "1.0.0-rc02"
 
 [libraries]
