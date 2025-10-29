@@ -81,10 +81,10 @@ jobs:
             echo "Polling for PR merge status (Elapsed: ${ELAPSED_TIME}s / Timeout: ${TIMEOUT_SECONDS}s)..."
 
             # First, try to find an *open* PR matching the title fragment.
-            # Using --limit 1 and --sort updated to pick the most recently updated PR if multiple exist.
-            # This is important if multiple PRs could contain the same title fragment.
+            # Removed --sort updated due to 'unknown flag' error on older gh CLI versions.
+            # We still use --limit 1 to fetch only one result.
             echo "Attempting to find OPEN PR..."
-            OPEN_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state open --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --sort updated --json number,state,title,mergedAt --jq '.[0]'"
+            OPEN_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state open --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --json number,state,title,mergedAt --jq '.[0]'"
             echo "Running command: $OPEN_PR_COMMAND"
           
             # Execute the command and capture its output
@@ -106,8 +106,8 @@ jobs:
             else
               echo "  -> No OPEN Pull Request found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Checking for MERGED PRs..."
               # No open PR found. Now, check if a *closed and merged* PR exists with the same title.
-              # Again, pick the most recently updated one.
-              MERGED_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state closed --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --sort updated --json number,state,title,mergedAt --jq '.[0]'"
+              # Removed --sort updated due to 'unknown flag' error on older gh CLI versions.
+              MERGED_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state closed --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --json number,state,title,mergedAt --jq '.[0]'"
               echo "Running command: $MERGED_PR_COMMAND"
 
               # Execute the command and capture its output
