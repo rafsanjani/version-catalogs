@@ -52,7 +52,7 @@ jobs:
           
           
           TIMEOUT_SECONDS=$((25 * 60)) # Set a timeout for polling (e.g., 25 minutes, leaving 5 min for deploy). Max job timeout is 30 minutes.
-          POLL_INTERVAL_SECONDS=5 # As requested, poll every 5 seconds
+          POLL_INTERVAL_SECONDS=25 # As requested, poll every 25 seconds
           ELAPSED_TIME=0
           PR_FOUND_AND_MERGED=false
           
