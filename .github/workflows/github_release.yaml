@@ -5,8 +5,10 @@ name: Trigger Release process
 on:
   workflow_dispatch:
   schedule:
-    #    At 2:30am every week on a sunday. This runs 1hour after the version updater
-    - cron: '30 2 * * 0'
+  workflow_run:
+    workflows: ["Update Version Code"]
+    types:
+      - completed
 
 jobs:
   trigger_release:
