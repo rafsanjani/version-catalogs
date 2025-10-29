@@ -52,7 +52,7 @@ jobs:
           
           
           TIMEOUT_SECONDS=$((25 * 60)) # Set a timeout for polling (e.g., 25 minutes, leaving 5 min for deploy). Max job timeout is 30 minutes.
-          POLL_INTERVAL_SECONDS=5 # As requested, poll every 5 seconds
+          POLL_INTERVAL_SECONDS=10 # As requested, poll every 5 seconds
           ELAPSED_TIME=0
           PR_FOUND_AND_MERGED=false
           
@@ -78,7 +78,7 @@ jobs:
             fi
           
           
-            if [ "${OPEN_PR_INFO}" != "null" ]; then
+            if [ "${OPEN_PR_INFO}" != " " ]; then
               PR_NUMBER=$(echo "${OPEN_PR_INFO}" | jq -r '.number')
               PR_TITLE=$(echo "${OPEN_PR_INFO}" | jq -r '.title')
               echo "  -> Found an OPEN Pull Request #${PR_NUMBER} ('${PR_TITLE}'). Waiting for merge..."
