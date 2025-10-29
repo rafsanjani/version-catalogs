@@ -43,6 +43,7 @@ media3 = "1.8.0"
 paging = "3.3.6"
 androidxnavigation = "2.9.5"
 jetbrainsNavigation = "2.9.1"
+jetbrainsNavigation3 = "1.0.0-alpha03"
 jetbrainsLifecycle = "2.9.5"
 backhandler = "1.9.1"
 firebase = "34.4.0"
@@ -168,6 +169,7 @@ square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.14"
 #Jetbrains multiplatform adaptations of androidx libs
 jetbrains-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrainsNavigation" }
 jetbrains-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "jetbrainsLifecycle" }
+jetbrains-navigation3 = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", version.ref = "jetbrainsNavigation3" }
 jetbrains-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "jetbrainsLifecycle" }
 jetbrains-compose-ui-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "backhandler" }
 
