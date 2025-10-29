@@ -1,5 +1,6 @@
-# This workflow will trigger release.sh every week. release.sh uses Github cli to create a tag and generate
-# a Github release. This Github release will in-turn trigger release.yaml to send a full release to maven central
+# This workflow will trigger release.sh every week. release.sh uses Github CLI to create a tag and generate
+# a Github release. This Github release will in-turn trigger release.yaml to send a full release to Maven Central
+
 name: Trigger Release process
 
 on:
@@ -14,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      GH_TOKEN: ${{secrets.SECRET_GITHUB}}
+      GH_TOKEN: ${{ secrets.SECRET_GITHUB }}
 
     steps:
       - uses: actions/checkout@v4
@@ -22,22 +23,17 @@ jobs:
       # --- NEW STEP: Wait for Version Updater Pull Request to be Merged ---
       - name: Wait for Release Pull Request to be Merged
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the built-in GitHub Token for API calls
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TAG_NAME="${GITHUB_REF_NAME}" # Get the tag name, e.g., 'v1.0.0'
+          TAG_NAME="${GITHUB_REF_NAME}"
           REPO_OWNER="${GITHUB_REPOSITORY_OWNER}"
           REPO_NAME="$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)"
-          
-          # CRITICAL: Define how to identify the specific PR.
-          # Based on your input: "The PR title always contains the word 'Bump Android Version Code to'"
+
           PR_SEARCH_TITLE_FRAGMENT="Bump Android Version Code to"
-          
-          # This variable will be used directly in the --search argument for gh pr list.
-          # It forms the part of the search query that filters by title.
+
           echo "Searching for Pull Request with title containing: '${PR_SEARCH_TITLE_FRAGMENT}'"
           echo "The current workflow was triggered by tag: '${TAG_NAME}'"
-          
-          # --- DEBUGGING: Verify gh CLI and jq are installed ---
+
           echo "Checking for 'gh' CLI installation..."
           if ! command -v gh &> /dev/null; then
               echo "::error::'gh' CLI is not installed. Please ensure your runner environment has 'gh' installed or add a step to install it."
@@ -48,79 +44,75 @@ jobs:
               echo "::error::'jq' is not installed. Please ensure your runner environment has 'jq' installed or add a step to install it."
               exit 1
           fi
-          # --- END DEBUGGING CHECKS ---
-          
-          
-          TIMEOUT_SECONDS=$((25 * 60)) # Set a timeout for polling (e.g., 25 minutes, leaving 5 min for deploy). Max job timeout is 30 minutes.
-          POLL_INTERVAL_SECONDS=5 # As requested, poll every 5 seconds
+
+          TIMEOUT_SECONDS=$((25 * 60)) # 25 minutes
+          POLL_INTERVAL_SECONDS=25
           ELAPSED_TIME=0
           PR_FOUND_AND_MERGED=false
-          
+
           while [ "${ELAPSED_TIME}" -lt "${TIMEOUT_SECONDS}" ]; do
             echo "Polling for PR merge status (Elapsed: ${ELAPSED_TIME}s / Timeout: ${TIMEOUT_SECONDS}s)..."
-          
-            # First, try to find an *open* PR matching the title fragment.
-            # Removed --sort updated due to 'unknown flag' error on older gh CLI versions.
-            # We still use --limit 1 to fetch only one result.
-            echo "Attempting to find OPEN PR..."
+
+            # Try to find an open PR
             OPEN_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state open --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --json number,state,title,mergedAt --jq '.[0]'"
-            echo "Running command: $OPEN_PR_COMMAND"
-          
-            # Execute the command and capture its output
             OPEN_PR_INFO=$(eval "$OPEN_PR_COMMAND")
-          
-            # Check the exit status of the 'eval' command (which reflects 'gh pr list')
-            if [ $? -ne 0 ]; then
-                echo "::error::'gh pr list' command failed for OPEN PR check. Check permissions, repository details, or potential rate limiting."
-                echo "Command output (stderr might be above this message):"
-                echo "$OPEN_PR_INFO" # This would actually be stdout, stderr would be separate in logs
-                exit 1 # Fail the job if the gh command itself failed
+            GH_EXIT=$?
+
+            if [ $GH_EXIT -ne 0 ]; then
+              echo "::error::'gh pr list' command failed for OPEN PR check. Check permissions, repository details, or potential rate limiting."
+              exit 1
             fi
-          
-          
-            if [ "${OPEN_PR_INFO}" != "null" ]; then
-              PR_NUMBER=$(echo "${OPEN_PR_INFO}" | jq -r '.number')
-              PR_TITLE=$(echo "${OPEN_PR_INFO}" | jq -r '.title')
-              echo "  -> Found an OPEN Pull Request #${PR_NUMBER} ('${PR_TITLE}'). Waiting for merge..."
-            else
+
+            # --- FIX: Robust handling of empty or invalid output ---
+            if [ -z "${OPEN_PR_INFO}" ] || [ "${OPEN_PR_INFO}" = "null" ]; then
               echo "  -> No OPEN Pull Request found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Checking for MERGED PRs..."
-              # No open PR found. Now, check if a *closed and merged* PR exists with the same title.
-              # Removed --sort updated due to 'unknown flag' error on older gh CLI versions.
-              MERGED_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state closed --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --json number,state,title,mergedAt --jq '.[0]'"
-              echo "Running command: $MERGED_PR_COMMAND"
-          
-              # Execute the command and capture its output
-              MERGED_PR_INFO=$(eval "$MERGED_PR_COMMAND")
-          
-              # Check the exit status of the 'eval' command (which reflects 'gh pr list')
-              if [ $? -ne 0 ]; then
-                  echo "::error::'gh pr list' command failed for MERGED PR check. Check permissions, repository details, or potential rate limiting."
-                  echo "Command output (stderr might be above this message):"
-                  echo "$MERGED_PR_INFO" # This would actually be stdout, stderr would be separate in logs
-                  exit 1 # Fail the job if the gh command itself failed
-              fi
-          
-              if [ "${MERGED_PR_INFO}" != "null" ] && [ "$(echo "${MERGED_PR_INFO}" | jq -r '.mergedAt')" != "null" ]; then
-                PR_NUMBER=$(echo "${MERGED_PR_INFO}" | jq -r '.number')
-                PR_TITLE=$(echo "${MERGED_PR_INFO}" | jq -r '.title')
-                echo "  -> Pull Request #${PR_NUMBER} ('${PR_TITLE}') found and was already merged. Proceeding."
-                PR_FOUND_AND_MERGED=true
-                break # Exit the loop, PR is merged
+            else
+              if echo "${OPEN_PR_INFO}" | jq -e . >/dev/null 2>&1; then
+                PR_NUMBER=$(echo "${OPEN_PR_INFO}" | jq -r '.number')
+                PR_TITLE=$(echo "${OPEN_PR_INFO}" | jq -r '.title')
+                if [ -n "${PR_NUMBER}" ] && [ "${PR_NUMBER}" != "null" ]; then
+                  echo "  -> Found an OPEN Pull Request #${PR_NUMBER} ('${PR_TITLE}'). Waiting for merge..."
+                  sleep "${POLL_INTERVAL_SECONDS}"
+                  ELAPSED_TIME=$((ELAPSED_TIME + POLL_INTERVAL_SECONDS))
+                  continue
+                else
+                  echo "  -> No valid PR data found (empty fields). Retrying..."
+                fi
               else
-                # No open PR and no merged PR found with the specified title fragment.
-                echo "  -> No open or recently merged PR found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Waiting for creation/merge..."
+                echo "  -> Output from gh command is invalid JSON. Retrying..."
               fi
             fi
-          
+
+            # Check for merged PR
+            MERGED_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state closed --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --json number,state,title,mergedAt --jq '.[0]'"
+            MERGED_PR_INFO=$(eval "$MERGED_PR_COMMAND")
+            GH_EXIT=$?
+
+            if [ $GH_EXIT -ne 0 ]; then
+              echo "::error::'gh pr list' command failed for MERGED PR check. Check permissions, repository details, or potential rate limiting."
+              exit 1
+            fi
+
+            if [ -n "${MERGED_PR_INFO}" ] && [ "${MERGED_PR_INFO}" != "null" ] && [ "$(echo "${MERGED_PR_INFO}" | jq -r '.mergedAt')" != "null" ]; then
+              PR_NUMBER=$(echo "${MERGED_PR_INFO}" | jq -r '.number')
+              PR_TITLE=$(echo "${MERGED_PR_INFO}" | jq -r '.title')
+              echo "  -> Pull Request #${PR_NUMBER} ('${PR_TITLE}') found and was already merged. Proceeding."
+              PR_FOUND_AND_MERGED=true
+              break
+            else
+              echo "  -> No open or recently merged PR found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Waiting for creation/merge..."
+            fi
+
             sleep "${POLL_INTERVAL_SECONDS}"
             ELAPSED_TIME=$((ELAPSED_TIME + POLL_INTERVAL_SECONDS))
           done
-          
+
           if [ "${PR_FOUND_AND_MERGED}" == "false" ]; then
             echo "::error::Timeout: Pull Request with title containing '${PR_SEARCH_TITLE_FRAGMENT}' was not found or merged within ${TIMEOUT_SECONDS} seconds."
-            exit 1 # Fail the job if timeout reached or PR wasn't merged
+            exit 1
           fi
-          echo "Successfully confirmed PR merge. Proceeding with deployment."
+
+          echo "✅ Successfully confirmed PR merge. Proceeding with deployment."
 
       - name: Generate Github Release
         run: ./.github/workflows/release.sh
