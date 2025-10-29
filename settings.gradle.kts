@@ -7,8 +7,6 @@ pluginManagement {
         gradlePluginPortal()
         mavenLocal()
     }
-
-    includeBuild("build-logic")
 }
 
 dependencyResolutionManagement {

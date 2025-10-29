@@ -1,15 +1,14 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
-val libraryVersion = "2025.04.28"
+val versionCode = "2025.10.24"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
-version = libraryVersion
+version = versionCode
 
 plugins {
     `version-catalog`
     alias(libs.plugins.vanniktech.publish)
-    id("com.foreverrafs.versionupdater")
 }
 
 catalog {
@@ -26,7 +25,7 @@ val publishingPassword: String = System.getenv("MAVEN_CENTRAL_PASSWORD") ?: ""
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, true)
     signAllPublications()
-    coordinates(libraryGroup, "versions", libraryVersion)
+    coordinates(libraryGroup, "versions", versionCode)
 
     pom {
         name.set("version-catalog")
