@@ -31,7 +31,7 @@ jobs:
       - name: Configure GPG Key
         run: |
           mkdir -p ~/.gnupg
-          echo $GPG_KEY > ~/.gnupg/secring.gpg.b64
+          echo "$GPG_KEY" > ~/.gnupg/secring.gpg.b64
           base64 -d ~/.gnupg/secring.gpg.b64 > ~/.gnupg/secring.gpg
 
       - name: Setup Gradle
@@ -51,12 +51,26 @@ jobs:
 
           # CRITICAL: Define how to identify the specific PR.
           # Based on your input: "The PR title always contains the word 'Bump Android Version Code to'"
-          PR_SEARCH_TITLE_FRAGMENT="Bump Android Version Code"
+          PR_SEARCH_TITLE_FRAGMENT="Bump Android Version Code to"
           
           # This variable will be used directly in the --search argument for gh pr list.
           # It forms the part of the search query that filters by title.
           echo "Searching for Pull Request with title containing: '${PR_SEARCH_TITLE_FRAGMENT}'"
           echo "The current workflow was triggered by tag: '${TAG_NAME}'"
+
+          # --- DEBUGGING: Verify gh CLI and jq are installed ---
+          echo "Checking for 'gh' CLI installation..."
+          if ! command -v gh &> /dev/null; then
+              echo "::error::'gh' CLI is not installed. Please ensure your runner environment has 'gh' installed or add a step to install it."
+              exit 1
+          fi
+          echo "Checking for 'jq' installation..."
+          if ! command -v jq &> /dev/null; then
+              echo "::error::'jq' is not installed. Please ensure your runner environment has 'jq' installed or add a step to install it."
+              exit 1
+          fi
+          # --- END DEBUGGING CHECKS ---
+
 
           TIMEOUT_SECONDS=$((25 * 60)) # Set a timeout for polling (e.g., 25 minutes, leaving 5 min for deploy). Max job timeout is 30 minutes.
           POLL_INTERVAL_SECONDS=5 # As requested, poll every 5 seconds
@@ -69,33 +83,44 @@ jobs:
             # First, try to find an *open* PR matching the title fragment.
             # Using --limit 1 and --sort updated to pick the most recently updated PR if multiple exist.
             # This is important if multiple PRs could contain the same title fragment.
-            OPEN_PR_INFO=$(gh pr list \
-              --repo "$REPO_OWNER/$REPO_NAME" \
-              --state open \
-              --search "in:title \"${PR_SEARCH_TITLE_FRAGMENT}\"" \
-              --limit 1 \
-              --sort updated \
-              --json number,state,title,mergedAt \
-              --jq '.[0]' \
-              2>/dev/null) # Suppress stderr if no PRs found to keep logs clean
+            echo "Attempting to find OPEN PR..."
+            OPEN_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state open --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --sort updated --json number,state,title,mergedAt --jq '.[0]'"
+            echo "Running command: $OPEN_PR_COMMAND"
+          
+            # Execute the command and capture its output
+            OPEN_PR_INFO=$(eval "$OPEN_PR_COMMAND")
+          
+            # Check the exit status of the 'eval' command (which reflects 'gh pr list')
+            if [ $? -ne 0 ]; then
+                echo "::error::'gh pr list' command failed for OPEN PR check. Check permissions, repository details, or potential rate limiting."
+                echo "Command output (stderr might be above this message):"
+                echo "$OPEN_PR_INFO" # This would actually be stdout, stderr would be separate in logs
+                exit 1 # Fail the job if the gh command itself failed
+            fi
+
 
             if [ "${OPEN_PR_INFO}" != "null" ]; then
               PR_NUMBER=$(echo "${OPEN_PR_INFO}" | jq -r '.number')
               PR_TITLE=$(echo "${OPEN_PR_INFO}" | jq -r '.title')
               echo "  -> Found an OPEN Pull Request #${PR_NUMBER} ('${PR_TITLE}'). Waiting for merge..."
             else
+              echo "  -> No OPEN Pull Request found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Checking for MERGED PRs..."
               # No open PR found. Now, check if a *closed and merged* PR exists with the same title.
               # Again, pick the most recently updated one.
-              MERGED_PR_INFO=$(gh pr list \
-                --repo "$REPO_OWNER/$REPO_NAME" \
-                --state closed \
-                --search "in:title \"${PR_SEARCH_TITLE_FRAGMENT}\"" \
-                --limit 1 \
-                --sort updated \
-                --json number,state,title,mergedAt \
-                --jq '.[0]' \
-                2>/dev/null) # Suppress stderr if no PRs found
-          
+              MERGED_PR_COMMAND="gh pr list --repo \"$REPO_OWNER/$REPO_NAME\" --state closed --search \"in:title \\\"${PR_SEARCH_TITLE_FRAGMENT}\\\"\" --limit 1 --sort updated --json number,state,title,mergedAt --jq '.[0]'"
+              echo "Running command: $MERGED_PR_COMMAND"
+
+              # Execute the command and capture its output
+              MERGED_PR_INFO=$(eval "$MERGED_PR_COMMAND")
+
+              # Check the exit status of the 'eval' command (which reflects 'gh pr list')
+              if [ $? -ne 0 ]; then
+                  echo "::error::'gh pr list' command failed for MERGED PR check. Check permissions, repository details, or potential rate limiting."
+                  echo "Command output (stderr might be above this message):"
+                  echo "$MERGED_PR_INFO" # This would actually be stdout, stderr would be separate in logs
+                  exit 1 # Fail the job if the gh command itself failed
+              fi
+
               if [ "${MERGED_PR_INFO}" != "null" ] && [ "$(echo "${MERGED_PR_INFO}" | jq -r '.mergedAt')" != "null" ]; then
                 PR_NUMBER=$(echo "${MERGED_PR_INFO}" | jq -r '.number')
                 PR_TITLE=$(echo "${MERGED_PR_INFO}" | jq -r '.title')
