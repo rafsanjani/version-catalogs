@@ -13,7 +13,7 @@ concurrency:
 jobs:
   maven_deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 30 # The entire job will time out after 30 minutes
     env:
       GPG_KEY: ${{ secrets.GPG_KEY }}
       MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
@@ -25,7 +25,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
+          distribution: 'zulu'
           java-version: '17'
 
       - name: Configure GPG Key
@@ -39,6 +39,84 @@ jobs:
 
       - name: Add MavenCentral credentials to gradle.properties file
         run: ./scripts/secrets.sh
+
+      # --- NEW STEP: Wait for Pull Request to be Merged ---
+      - name: Wait for Release Pull Request to be Merged
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the built-in GitHub Token for API calls
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME}" # Get the tag name, e.g., 'v1.0.0'
+          REPO_OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO_NAME="$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)"
+
+          # CRITICAL: Define how to identify the specific PR.
+          # Based on your input: "The PR title always contains the word 'Bump Android Version Code to'"
+          PR_SEARCH_TITLE_FRAGMENT="Bump Android Version Code"
+          
+          # This variable will be used directly in the --search argument for gh pr list.
+          # It forms the part of the search query that filters by title.
+          echo "Searching for Pull Request with title containing: '${PR_SEARCH_TITLE_FRAGMENT}'"
+          echo "The current workflow was triggered by tag: '${TAG_NAME}'"
+
+          TIMEOUT_SECONDS=$((25 * 60)) # Set a timeout for polling (e.g., 25 minutes, leaving 5 min for deploy). Max job timeout is 30 minutes.
+          POLL_INTERVAL_SECONDS=5 # As requested, poll every 5 seconds
+          ELAPSED_TIME=0
+          PR_FOUND_AND_MERGED=false
+
+          while [ "${ELAPSED_TIME}" -lt "${TIMEOUT_SECONDS}" ]; do
+            echo "Polling for PR merge status (Elapsed: ${ELAPSED_TIME}s / Timeout: ${TIMEOUT_SECONDS}s)..."
+
+            # First, try to find an *open* PR matching the title fragment.
+            # Using --limit 1 and --sort updated to pick the most recently updated PR if multiple exist.
+            # This is important if multiple PRs could contain the same title fragment.
+            OPEN_PR_INFO=$(gh pr list \
+              --repo "$REPO_OWNER/$REPO_NAME" \
+              --state open \
+              --search "in:title \"${PR_SEARCH_TITLE_FRAGMENT}\"" \
+              --limit 1 \
+              --sort updated \
+              --json number,state,title,mergedAt \
+              --jq '.[0]' \
+              2>/dev/null) # Suppress stderr if no PRs found to keep logs clean
+
+            if [ "${OPEN_PR_INFO}" != "null" ]; then
+              PR_NUMBER=$(echo "${OPEN_PR_INFO}" | jq -r '.number')
+              PR_TITLE=$(echo "${OPEN_PR_INFO}" | jq -r '.title')
+              echo "  -> Found an OPEN Pull Request #${PR_NUMBER} ('${PR_TITLE}'). Waiting for merge..."
+            else
+              # No open PR found. Now, check if a *closed and merged* PR exists with the same title.
+              # Again, pick the most recently updated one.
+              MERGED_PR_INFO=$(gh pr list \
+                --repo "$REPO_OWNER/$REPO_NAME" \
+                --state closed \
+                --search "in:title \"${PR_SEARCH_TITLE_FRAGMENT}\"" \
+                --limit 1 \
+                --sort updated \
+                --json number,state,title,mergedAt \
+                --jq '.[0]' \
+                2>/dev/null) # Suppress stderr if no PRs found
+          
+              if [ "${MERGED_PR_INFO}" != "null" ] && [ "$(echo "${MERGED_PR_INFO}" | jq -r '.mergedAt')" != "null" ]; then
+                PR_NUMBER=$(echo "${MERGED_PR_INFO}" | jq -r '.number')
+                PR_TITLE=$(echo "${MERGED_PR_INFO}" | jq -r '.title')
+                echo "  -> Pull Request #${PR_NUMBER} ('${PR_TITLE}') found and was already merged. Proceeding."
+                PR_FOUND_AND_MERGED=true
+                break # Exit the loop, PR is merged
+              else
+                # No open PR and no merged PR found with the specified title fragment.
+                echo "  -> No open or recently merged PR found with title containing '${PR_SEARCH_TITLE_FRAGMENT}'. Waiting for creation/merge..."
+              fi
+            fi
+          
+            sleep "${POLL_INTERVAL_SECONDS}"
+            ELAPSED_TIME=$((ELAPSED_TIME + POLL_INTERVAL_SECONDS))
+          done
+
+          if [ "${PR_FOUND_AND_MERGED}" == "false" ]; then
+            echo "::error::Timeout: Pull Request with title containing '${PR_SEARCH_TITLE_FRAGMENT}' was not found or merged within ${TIMEOUT_SECONDS} seconds."
+            exit 1 # Fail the job if timeout reached or PR wasn't merged
+          fi
+          echo "Successfully confirmed PR merge. Proceeding with deployment."
 
       - name: Fire in the hole
         run: |

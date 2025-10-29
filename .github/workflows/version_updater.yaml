@@ -18,6 +18,9 @@ jobs:
       - name: Bump Version Code
         run: bash .github/workflows/incrementVersionCode.sh
 
+      - name: Set current date as environment variable
+        run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
