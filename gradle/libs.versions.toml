@@ -346,7 +346,7 @@ androidx-media3-datasource = { module = "androidx.media3:media3-datasource", ver
 # Test
 androidx-test-espressoCore = "androidx.test.espresso:espresso-core:3.7.0"
 androidx-test-espressoWeb = "androidx.test.espresso:espresso-web:3.7.0"
-androidx-hilt-work = "androidx.hilt:hilt-work:1.2.0"
+androidx-hilt-work = "androidx.hilt:hilt-work:1.3.0"
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt-compiler" }
 androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.3.0"
 androidx-hilt-navigation-fragment = "androidx.hilt:hilt-navigation-fragment:1.3.0"
