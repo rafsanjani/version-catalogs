@@ -1,5 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
-
 val versionCode = "2025.11.06"
 val libraryGroup = "io.github.rafsanjani"
 
@@ -23,7 +21,7 @@ val publishingPassword: String = System.getenv("MAVEN_CENTRAL_PASSWORD") ?: ""
 
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, true)
+    publishToMavenCentral(true)
     signAllPublications()
     coordinates(libraryGroup, "versions", versionCode)
 
