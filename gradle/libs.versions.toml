@@ -13,7 +13,7 @@ benchmark-macro-junit4 = "1.2.4"
 composeLintChecks = "1.4.2"
 googlePlayServices = "4.4.4"
 kotlinxCollectionsImmutable = "0.4.0"
-compose-multiplatform = "1.9.2"
+compose-multiplatform = "1.10.0-beta01"
 voyager = "1.0.1"
 moko-resources = "0.25.1"
 moko-permissions = "0.20.1"
@@ -44,7 +44,6 @@ paging = "3.3.6"
 androidxnavigation = "2.9.6"
 jetbrainsNavigation = "2.9.1"
 jetbrainsLifecycle = "2.9.5"
-backhandler = "1.10.0-beta01"
 firebase = "34.5.0"
 firebase-plugin = "3.0.6"
 moshi = "1.15.2"
@@ -166,7 +165,13 @@ square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.14"
 jetbrains-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrainsNavigation" }
 jetbrains-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "jetbrainsLifecycle" }
 jetbrains-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "jetbrainsLifecycle" }
-jetbrains-compose-ui-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "backhandler" }
+jetbrains-compose-ui-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "compose-multiplatform" }
+jetbrains-compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "compose-multiplatform" }
+jetbrains-compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-multiplatform" }
+jetbrains-compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "compose-multiplatform" }
+jetbrains-compose-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
+jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3", version.ref = "compose-multiplatform" }
+jetbrains-compose-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "compose-multiplatform" }
 
 #OkHttp
 square-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
@@ -398,7 +403,7 @@ ktlint-rules-compose = { module = "io.nlopez.compose.rules:ktlint", version.ref 
 
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-compose-hot-reload = {id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload" }
+compose-hot-reload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload" }
 android-application = { id = "com.android.application", version.ref = "gradle" }
 android-library = { id = "com.android.library", version.ref = "gradle" }
 android-test = { id = "com.android.test", version.ref = "gradle" }
@@ -431,5 +436,5 @@ kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 kotlinx-kover-aggregation = { id = "org.jetbrains.kotlinx.kover.aggregation", version.ref = "kover" }
 mokkery = { id = "dev.mokkery", version.ref = "mokkery" }
 sentry = { id = "io.sentry.android.gradle", version.require = "5.12.2" }
-vanniktech-publish = { id = "com.vanniktech.maven.publish", version.require = "0.31.0" }
+vanniktech-publish = { id = "com.vanniktech.maven.publish", version.require = "0.34.0" }
 foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version.require = "1.0.0" }
