@@ -8,7 +8,7 @@ targetSdk = "35"
 
 assertk = "0.28.1"
 dagger = "2.57.2"
-compose-bom = "2025.10.01"
+compose-bom = "2025.11.00"
 benchmark-macro-junit4 = "1.2.4"
 composeLintChecks = "1.4.2"
 googlePlayServices = "4.4.4"
