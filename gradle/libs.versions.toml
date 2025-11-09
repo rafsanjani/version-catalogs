@@ -28,6 +28,7 @@ kotlinInject = "0.8.0"
 material2 = "1.12.0"
 compose-material = "1.9.4"
 material3 = "1.4.0"
+jetbrainsMaterial3="1.10.0-alpha04"
 gradle = "8.13.0"
 detekt = "1.23.8"
 ktlint = "13.1.0"
@@ -167,7 +168,7 @@ jetbrains-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lif
 jetbrains-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "jetbrainsLifecycle" }
 jetbrains-compose-ui-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "compose-multiplatform" }
 jetbrains-compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "compose-multiplatform" }
-jetbrains-compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-multiplatform" }
+jetbrains-compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "jetbrainsMaterial3" }
 jetbrains-compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "compose-multiplatform" }
 jetbrains-compose-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
 jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3", version.ref = "compose-multiplatform" }
