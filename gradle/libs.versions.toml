@@ -10,12 +10,13 @@ assertk = "0.28.1"
 dagger = "2.57.2"
 compose-bom = "2025.11.00"
 benchmark-macro-junit4 = "1.2.4"
-composeLintChecks = "1.4.2"
+composeLintChecks = "1.4.2" 
 googlePlayServices = "4.4.4"
 kotlinxCollectionsImmutable = "0.4.0"
 compose-multiplatform = "1.10.0-beta01"
 voyager = "1.0.1"
 moko-resources = "0.25.1"
+jb-navigation3="1.0.0-alpha04"
 moko-permissions = "0.20.1"
 ktor = "3.3.2"
 kermit = "2.0.8"
@@ -171,7 +172,7 @@ jetbrains-compose-runtime = { group = "org.jetbrains.compose.runtime", name = "r
 jetbrains-compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "jetbrainsMaterial3" }
 jetbrains-compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "compose-multiplatform" }
 jetbrains-compose-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
-jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3", version.ref = "compose-multiplatform" }
+jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3", version.ref = "jb-navigation3" }
 jetbrains-compose-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "compose-multiplatform" }
 
 #OkHttp
