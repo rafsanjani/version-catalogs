@@ -173,7 +173,7 @@ jetbrains-compose-material3 = { group = "org.jetbrains.compose.material3", name 
 jetbrains-compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "compose-multiplatform" }
 jetbrains-compose-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
 jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3", version.ref = "jb-navigation3" }
-jetbrains-compose-material-iconsextended = { module = "androidx.compose.material:material-icons-extended", version.require = "1.7.3" }
+jetbrains-compose-material-iconsextended = { module = "androidx.compose.material:material-icons-extended", version.require = "1.7.8" }
 jetbrains-compose-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "compose-multiplatform" }
 
 #OkHttp
