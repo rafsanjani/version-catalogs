@@ -87,7 +87,7 @@ maps-compose = "6.12.2"
 store = "5.1.0"
 biometric = "1.4.0-alpha04"
 kotlinxIO = "0.8.0"
-datastore = "1.2.0-rc01"
+datastore = "1.2.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
