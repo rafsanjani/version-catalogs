@@ -13,7 +13,7 @@ jobs:
   updateversion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Bump Version Code
         run: bash .github/workflows/incrementVersionCode.sh
