@@ -18,6 +18,7 @@ voyager = "1.0.1"
 moko-resources = "0.25.2"
 jb-navigation3="1.0.0-alpha05"
 moko-permissions = "0.20.1"
+dependencyguard="0.5.0"
 ktor = "3.3.2"
 kermit = "2.0.8"
 appdistribution="5.2.0"
@@ -428,6 +429,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazzi" }
+dependencyguard = {id = "com.dropbox.dependency-guard", version.ref="dependencyguard"}
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidx-baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }
