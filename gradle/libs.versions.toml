@@ -82,6 +82,7 @@ baselineprofile = "1.4.1"
 mockative = "3.0.1"
 compose-rules = "0.5.1"
 sentry = "8.28.0"
+jbViewModelNav3 = "2.10.0-alpha06"
 mokkery = "3.0.0"
 kotlinSerialization = "1.9.0"
 supabase = "4.0.0"
@@ -177,7 +178,7 @@ jetbrains-compose-resources = { group = "org.jetbrains.compose.components", name
 jetbrains-compose-navigation3 = { group = "org.jetbrains.androidx.navigation3", name = "navigation3-ui", version.ref = "jb-navigation3" }
 jetbrains-compose-material-iconsextended = { module = "androidx.compose.material:material-icons-extended", version.require = "1.7.8" }
 jetbrains-compose-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "compose-multiplatform" }
-
+jetbrains-compose-viewmodel-navigation3 = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "jbViewModelNav3"}
 #OkHttp
 square-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
 square-okhttp-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
