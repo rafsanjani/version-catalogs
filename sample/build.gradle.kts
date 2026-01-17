@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.ksp)
-    alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -41,18 +40,12 @@ android {
             jvmTarget = JvmTarget.JVM_17
         }
     }
-
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material.material3)
-    ksp(libs.dagger.hilt.compiler)
     ksp(libs.dagger.compiler)
-    implementation(libs.dagger.hilt)
     implementation(libs.compose.ui.tooling)
     implementation(libs.google.material)
     implementation(libs.androidx.paging.compose)
