@@ -15,10 +15,8 @@ catalog {
     }
 }
 
-
 val publishingUsername: String = System.getenv("MAVEN_CENTRAL_USERNAME") ?: ""
 val publishingPassword: String = System.getenv("MAVEN_CENTRAL_PASSWORD") ?: ""
-
 
 mavenPublishing {
     publishToMavenCentral(true)

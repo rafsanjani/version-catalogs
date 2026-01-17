@@ -25,5 +25,4 @@ dependencyResolutionManagement {
     }
 }
 
-include("versions")
 include(":sample")
