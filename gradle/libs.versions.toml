@@ -284,7 +284,7 @@ google-playservices-gradlePlugin = "com.google.gms:google-services:4.4.4"
 google-playservices-core = "com.google.android.play:core-ktx:1.8.1"
 google-playservices-location = "com.google.android.gms:play-services-location:21.3.0"
 google-playservices-appUpdate = "com.google.android.play:app-update:2.1.0"
-google-playservices-identity = "com.google.android.libraries.identity.googleid:googleid:1.1.1"
+google-playservices-identity = "com.google.android.libraries.identity.googleid:googleid:1.2.0"
 google-material = "com.google.android.material:material:1.13.0"
 google-testparameterinjector = "com.google.testparameterinjector:test-parameter-injector:1.20"
 google-maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps-compose" }
