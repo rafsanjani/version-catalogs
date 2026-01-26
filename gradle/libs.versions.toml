@@ -91,7 +91,7 @@ store = "5.1.0"
 biometric = "1.4.0-alpha05"
 kotlinxIO = "0.8.2"
 datastore = "1.2.0"
-sentryGradle = "6.0.0-rc.1"
+sentryGradle = "6.0.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
