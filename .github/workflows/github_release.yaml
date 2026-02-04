@@ -4,7 +4,6 @@
 name: Trigger Release process
 
 on:
-  workflow_dispatch:
   workflow_run:
     workflows: [ "Update Version Code" ]
     types:
