@@ -89,7 +89,7 @@ supabase = "4.0.0"
 maps-compose = "8.1.0"
 store = "5.1.0"
 biometric = "1.4.0-alpha05"
-kotlinxIO = "0.8.2"
+kotlinxIO = "0.9.0"
 datastore = "1.2.0"
 sentryGradle = "6.1.0"
 
