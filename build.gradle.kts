@@ -1,4 +1,4 @@
-val versionCode = "2026.02.15"
+val versionCode = "2026.02.22"
 val libraryGroup = "io.github.rafsanjani"
 
 group = libraryGroup
