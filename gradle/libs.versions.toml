@@ -1,6 +1,6 @@
 [versions]
 activity = "1.13.0"
-compileSdk = "36"
+compileSdk = "36.1"
 koin = "4.2.1"
 metricsPerformance = "1.0.0"
 minimumSdk = "28"
