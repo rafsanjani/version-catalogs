@@ -59,7 +59,7 @@ lifecycle = "2.10.0"
 sqldelight = "2.3.2"
 dokka = "2.2.0"
 kmpNativeCoroutines = "1.0.3"
-core-ktx = "1.18.0"
+core = "1.18.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -94,7 +94,7 @@ datastore = "1.2.1"
 sentryGradle = "6.9.0"
 
 [libraries]
-androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
+androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
 androidx-metrics-performance = { module = "androidx.metrics:metrics-performance", version.ref = "metricsPerformance" }
 assertk-common = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
@@ -146,9 +146,9 @@ kotlin-metadataJvm = "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0"
 
 #Firebase
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
-firebase-auth = { module = "com.google.firebase:firebase-auth-ktx" }
-firebase-firestore = { module = "com.google.firebase:firebase-firestore-ktx" }
-firebase-analyticsKts = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 firebase-crashlytics-gradlePlugin = "com.google.firebase:firebase-crashlytics-gradle:3.0.7"
 
@@ -225,24 +225,24 @@ coil3-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.r
 coil3-multiplatform = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 
 androidx-appcompat = "androidx.appcompat:appcompat:1.7.1"
-androidx-core = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-core = { module = "androidx.core:core", version.ref = "core" }
 androidx-core-uri = "org.jetbrains.androidx.core:core-uri:1.0.0-alpha01"
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
-androidx-fragment = "androidx.fragment:fragment-ktx:1.8.9"
-androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.1.0"
-androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-fragment = "androidx.fragment:fragment:1.8.9"
+androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation:1.1.0"
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
-androidx-lifecycle-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycle" }
 androidx-startup = "androidx.startup:startup-runtime:1.2.0"
-androidx-palette = "androidx.palette:palette-ktx:1.0.0"
+androidx-palette = "androidx.palette:palette:1.0.0"
 androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "datastore" }
 androidx-test-ext-junit = "androidx.test.ext:junit:1.3.0"
 
 #Work
-androidx-work = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
+androidx-work = { module = "androidx.work:work-runtime", version.ref = "work" }
 androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "work" }
 androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "work" }
 androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "work" }
@@ -256,7 +256,7 @@ dagger-hilt-testing = { module = "com.google.dagger:hilt-android-testing", versi
 
 #Room
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
-androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room = { module = "androidx.room:room", version.ref = "room" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-room-rxJava2 = { module = "androidx.room:room-rxjava2", version.ref = "room" }
@@ -283,7 +283,7 @@ ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "kto
 
 #Google
 google-playservices-gradlePlugin = "com.google.gms:google-services:4.4.4"
-google-playservices-core = "com.google.android.play:core-ktx:1.8.1"
+google-playservices-core = "com.google.android.play:core:1.8.1"
 google-playservices-location = "com.google.android.gms:play-services-location:21.3.0"
 google-playservices-appUpdate = "com.google.android.play:app-update:2.1.0"
 google-playservices-identity = "com.google.android.libraries.identity.googleid:googleid:1.2.0"
@@ -303,7 +303,7 @@ voyager-tabNavigator = { module = "cafe.adriel.voyager:voyager-tab-navigator", v
 
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxnavigation" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidxnavigation" }
-androidx-test-core = { module = "androidx.test:core-ktx", version.ref = "androidxtest" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidxtest" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxtest" }
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidxtest" }
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "androidxtest" }
@@ -315,8 +315,8 @@ androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "b
 #Paging
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 androidx-paging-testing = { module = "androidx.paging:paging-testing", version.ref = "paging" }
-androidx-paging-common = { module = "androidx.paging:paging-common-ktx", version.ref = "paging" }
-androidx-paging-runtime = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
+androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "paging" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 
 #Credentials
 androidx-credentials-bom = { module = "androidx.credentials:credentials", version.ref = "credentials" }
