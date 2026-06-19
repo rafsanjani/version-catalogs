@@ -17,7 +17,7 @@ jobs:
       GH_TOKEN: ${{ secrets.SECRET_GITHUB }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # --- NEW STEP: Wait for Version Updater Pull Request to be Merged ---
       - name: Wait for Release Pull Request to be Merged
