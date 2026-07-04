@@ -307,7 +307,7 @@ androidx-test-core = { module = "androidx.test:core", version.ref = "androidxtes
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxtest" }
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidxtest" }
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "androidxtest" }
-androidx-test-uiAutomator = "androidx.test.uiautomator:uiautomator:2.3.0"
+androidx-test-uiAutomator = "androidx.test.uiautomator:uiautomator:2.4.0"
 androidx-profileinstaller = "androidx.profileinstaller:profileinstaller:1.4.1"
 androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "baselineprofile" }
 androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
