@@ -150,7 +150,7 @@ firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
-firebase-crashlytics-gradlePlugin = "com.google.firebase:firebase-crashlytics-gradle:3.0.7"
+firebase-crashlytics-gradlePlugin = "com.google.firebase:firebase-crashlytics-gradle:3.0.8"
 
 #Moshi
 square-moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
